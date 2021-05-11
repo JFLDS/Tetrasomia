@@ -4,7 +4,10 @@
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float speed;
+    private float speed = 5;
+
+    [SerializeField]
+    private float sensi = 7;
 
     private PlayerMotor motor;
 
@@ -18,12 +21,21 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         //Calcul de la vélocité                     //renvoie 0 si on ne bouge pas
-        float xM = Input.GetAxisRaw("Horizontal");  //Q(touche négative)=(-1) & D(touche positive)=(1)
-        float zM = Input.GetAxisRaw("Vertical");    //S(touche négative)=(-1) & Z(touche positive)=(1)
+        float xMovement = Input.GetAxisRaw("Horizontal");  //Q(touche négative)=(-1) & D(touche positive)=(1)
+        float zMovement = Input.GetAxisRaw("Vertical");    //S(touche négative)=(-1) & Z(touche positive)=(1)
+        Vector3 movementHorizontal = transform.right * xMovement;
+        Vector3 movementVertical = transform.forward * zMovement;
+        Vector3 velocity = (movementHorizontal + movementVertical).normalized * speed;
+        motor.Move(velocity);
 
-        Vector3 moveHorizontal = transform.right * xM;
-        Vector3 moveVertical = transform.forward * zM;
+        //Calcul de la rotation du joueur (Axe horizontal)
+        float yRotation = Input.GetAxisRaw("Mouse X");
+        Vector3 rotation = new Vector3(0, yRotation, 0) * sensi;
+        motor.Rotate(rotation);
 
-        Vector3 velocity = (moveHorizontal + moveVertical).normalized * speed;
+        //Calcul de la rotation de la camera (Axe vertical)
+        float xRotation = Input.GetAxisRaw("Mouse Y");
+        Vector3 rotationCam = new Vector3(xRotation, 0, 0) * sensi;
+        motor.RotateCam(rotationCam);
     }
 }
