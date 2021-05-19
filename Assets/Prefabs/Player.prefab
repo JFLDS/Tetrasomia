@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2029912446699496992}
   - component: {fileID: 2029912446699497006}
   - component: {fileID: 2029912446699496993}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 2029912447116556122}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 =======
@@ -110,8 +111,15 @@ GameObject:
   - component: {fileID: -1825822674922874604}
   m_Layer: 0
 >>>>>>> parent of 9817366 (mirror avant synchro)
+=======
+  - component: {fileID: -4826472345182272593}
+  - component: {fileID: -1825822674922874604}
+  - component: {fileID: -8043930376803344428}
+  - component: {fileID: -31705062848430939}
+  m_Layer: 0
+>>>>>>> parent of 11224ec (Merge branch 'main' of https://github.com/ZEITTON/Tetrasomia into main)
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +133,7 @@ Transform:
   m_GameObject: {fileID: 2029912447116556123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1.299, y: 1.299, z: 1.299}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2029912447282695198}
   - {fileID: 2029912446699496992}
@@ -189,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   sensi: 7
---- !u!114 &3387623782599604197
+--- !u!114 &-4826472345182272593
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,68 +206,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2029912447116556123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aab4c8111b7c411b9b92cf3dbc5bd4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dontDestroyOnLoad: 1
-  PersistNetworkManagerToOfflineScene: 0
-  runInBackground: 1
-  autoStartServerBuild: 1
-  serverTickRate: 30
-  serverBatching: 1
-  serverBatchInterval: 0
-  offlineScene: 
-  onlineScene: 
-  transport: {fileID: -896237235932913886}
-  networkAddress: localhost
-  maxConnections: 100
-  disconnectInactiveConnections: 0
-  disconnectInactiveTimeout: 60
-  authenticator: {fileID: 0}
-  playerPrefab: {fileID: 0}
-  autoCreatePlayer: 1
-  playerSpawnMethod: 0
-  spawnPrefabs: []
---- !u!114 &-896237235932913886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029912447116556123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Port: 7777
-  NoDelay: 1
-  Interval: 10
-  FastResend: 2
-  CongestionWindow: 0
-  SendWindowSize: 4096
-  ReceiveWindowSize: 4096
-  debugLog: 0
-  statisticsGUI: 0
-  statisticsLog: 0
---- !u!114 &3060697582611147537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029912447116556123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+<<<<<<< HEAD
   showGUI: 1
   offsetX: 0
   offsetY: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!114 &2587326027869562742
+=======
+  sceneId: 0
+  serverOnly: 0
+  visible: 0
+  m_AssetId: 
+  hasSpawned: 0
+--- !u!114 &-1825822674922874604
+>>>>>>> parent of 11224ec (Merge branch 'main' of https://github.com/ZEITTON/Tetrasomia into main)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,11 +232,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2029912447116556123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a14fc9f2f3982f64c9c52095a12f1461, type: 3}
+  m_Script: {fileID: 11500000, guid: 50ef78d594dd13e4681b68416a1d60da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+<<<<<<< HEAD
   weapon:
     nameW: AK47
     damage: 10
@@ -287,6 +252,14 @@ MonoBehaviour:
 >>>>>>> parent of 9817366 (mirror avant synchro)
 --- !u!114 &-4826472345182272593
 >>>>>>> parent of 9817366 (mirror avant synchro)
+=======
+  componentToDisable:
+  - {fileID: 2029912447116556125}
+  - {fileID: 2029912447116556122}
+  - {fileID: 2029912446699497006}
+  - {fileID: 2029912446699496993}
+--- !u!114 &-8043930376803344428
+>>>>>>> parent of 11224ec (Merge branch 'main' of https://github.com/ZEITTON/Tetrasomia into main)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -295,15 +268,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 2029912447116556123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 0
-  visible: 0
-  m_AssetId: 
-  hasSpawned: 0
---- !u!114 &3776637860819857568
+  syncMode: 0
+  syncInterval: 0.1
+  clientAuthority: 1
+  localPositionSensitivity: 0.01
+  localRotationSensitivity: 0.01
+  localScaleSensitivity: 0.01
+  compressRotation: 0
+  interpolateScale: 1
+  syncScale: 1
+--- !u!114 &-31705062848430939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -312,18 +289,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 2029912447116556123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50ef78d594dd13e4681b68416a1d60da, type: 3}
+  m_Script: {fileID: 11500000, guid: 734b48bea0b204338958ee3d885e11f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
 <<<<<<< HEAD
   syncMode: 0
   syncInterval: 0.1
+<<<<<<< HEAD
 
 =======
 >>>>>>> parent of 9817366 (mirror avant synchro)
 =======
 >>>>>>> parent of 9817366 (mirror avant synchro)
+=======
+  clientAuthority: 1
+  localPositionSensitivity: 0.01
+  localRotationSensitivity: 0.01
+  localScaleSensitivity: 0.01
+  compressRotation: 0
+  interpolateScale: 1
+  syncScale: 1
+  target: {fileID: 2029912446699496992}
+>>>>>>> parent of 11224ec (Merge branch 'main' of https://github.com/ZEITTON/Tetrasomia into main)
 --- !u!1 &2029912447282695199
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,7 +321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2029912447282695198}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2029912447722037346}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +387,7 @@ GameObject:
   - component: {fileID: 2029912447827250634}
   - component: {fileID: 2029912447827250636}
   - component: {fileID: 2029912447827250637}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +466,7 @@ GameObject:
   - component: {fileID: 2029912448109587051}
   - component: {fileID: 2029912448109587053}
   - component: {fileID: 2029912448109587050}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,7 +545,7 @@ GameObject:
   - component: {fileID: 2029912448638439592}
   - component: {fileID: 2029912448638439594}
   - component: {fileID: 2029912448638439595}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,7 +624,7 @@ GameObject:
   - component: {fileID: 2029912448692530935}
   - component: {fileID: 2029912448692530921}
   - component: {fileID: 2029912448692530934}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
