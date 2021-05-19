@@ -97,7 +97,16 @@ GameObject:
   - component: {fileID: 2029912447116556124}
   - component: {fileID: 2029912447116556125}
   - component: {fileID: 2029912447116556122}
+<<<<<<< HEAD
 
+=======
+  - component: {fileID: 3387623782599604197}
+  - component: {fileID: -896237235932913886}
+  - component: {fileID: 3060697582611147537}
+  - component: {fileID: -4826472345182272593}
+  - component: {fileID: -1825822674922874604}
+  m_Layer: 0
+>>>>>>> parent of 9817366 (mirror avant synchro)
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -245,6 +254,7 @@ MonoBehaviour:
   showGUI: 1
   offsetX: 0
   offsetY: 0
+<<<<<<< HEAD
 --- !u!114 &2587326027869562742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +278,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
 --- !u!114 &1506099218258876454
+=======
+--- !u!114 &-4826472345182272593
+>>>>>>> parent of 9817366 (mirror avant synchro)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,9 +309,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ef78d594dd13e4681b68416a1d60da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   syncMode: 0
   syncInterval: 0.1
 
+=======
+>>>>>>> parent of 9817366 (mirror avant synchro)
 --- !u!1 &2029912447282695199
 GameObject:
   m_ObjectHideFlags: 0
