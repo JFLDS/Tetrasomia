@@ -114,8 +114,6 @@ GameObject:
 =======
   - component: {fileID: -4826472345182272593}
   - component: {fileID: -1825822674922874604}
-  - component: {fileID: -8043930376803344428}
-  - component: {fileID: -31705062848430939}
   m_Layer: 0
 >>>>>>> parent of 11224ec (Merge branch 'main' of https://github.com/ZEITTON/Tetrasomia into main)
   m_Name: Player
@@ -258,6 +256,7 @@ MonoBehaviour:
   - {fileID: 2029912447116556122}
   - {fileID: 2029912446699497006}
   - {fileID: 2029912446699496993}
+<<<<<<< HEAD
 --- !u!114 &-8043930376803344428
 >>>>>>> parent of 11224ec (Merge branch 'main' of https://github.com/ZEITTON/Tetrasomia into main)
 MonoBehaviour:
@@ -312,6 +311,8 @@ MonoBehaviour:
   syncScale: 1
   target: {fileID: 2029912446699496992}
 >>>>>>> parent of 11224ec (Merge branch 'main' of https://github.com/ZEITTON/Tetrasomia into main)
+=======
+>>>>>>> parent of b0b291c (mirror fin)
 --- !u!1 &2029912447282695199
 GameObject:
   m_ObjectHideFlags: 0
