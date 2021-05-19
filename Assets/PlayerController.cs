@@ -4,10 +4,10 @@
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 5;
+    private float speed = 5f;
 
     [SerializeField]
-    private float sensi = 7;
+    private float sensi = 7f;
 
     private PlayerMotor motor;
 
@@ -30,12 +30,12 @@ public class PlayerController : MonoBehaviour
 
         //Calcul de la rotation du joueur (Axe horizontal)
         float yRotation = Input.GetAxisRaw("Mouse X");
-        Vector3 rotation = new Vector3(0, yRotation, 0) * sensi;
+        Vector3 rotation = new Vector3(0f, yRotation, 0f) * sensi;
         motor.Rotate(rotation);
 
         //Calcul de la rotation de la camera (Axe vertical)
         float xRotation = Input.GetAxisRaw("Mouse Y");
-        Vector3 rotationCam = new Vector3(xRotation, 0, 0) * sensi;
+        Vector3 rotationCam = new Vector3(xRotation, 0f, 0f) * sensi;
         motor.RotateCam(rotationCam);
     }
 }
