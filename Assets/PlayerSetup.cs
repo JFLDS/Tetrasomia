@@ -8,7 +8,7 @@ public class PlayerSetup : MonoBehaviour
     
     private void Start()
     {
-        if( !isLocalPlayer)
+        /*if( !isLocalPlayer)
         {
             //
             for(int i = 0; i < componentToDisable.Length; i++)
@@ -16,6 +16,6 @@ public class PlayerSetup : MonoBehaviour
                 componentToDisable[i].enabled = false;
             }
 
-        }
+        }*/
     }
 }
