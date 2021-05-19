@@ -1,11 +1,12 @@
 ﻿
 using UnityEngine;
 using Mirror;
-public class PlayerSetup : MonoBehaviour
+public class PlayerSetup : NetworkBehaviour
 {
     [SerializeField]
     Behaviour[] componentToDisable;
-    
+
+    Camera sceneCamera;
     private void Start()
     {
         if( !isLocalPlayer)
@@ -16,6 +17,22 @@ public class PlayerSetup : MonoBehaviour
                 componentToDisable[i].enabled = false;
             }
 
+        }
+        else
+        {
+            sceneCamera = Camera.main;
+            if(sceneCamera != null)
+            {
+                sceneCamera.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    private void OnDisable()
+    {
+        if(sceneCamera != null)
+        {
+            sceneCamera.gameObject.SetActive(true);
         }
     }
 }
