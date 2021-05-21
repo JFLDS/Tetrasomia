@@ -12,10 +12,7 @@ public class PlayerController : MonoBehaviour
     private PlayerMotor motor;
 
     // Start is called before the first frame update
-    private void Start()
-    {
-        motor = GetComponent<PlayerMotor>();   
-    }
+    private void Start() { motor = GetComponent<PlayerMotor>(); }
 
     // Update is called once per frame
     private void Update()
