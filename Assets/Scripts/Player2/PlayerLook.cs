@@ -36,8 +36,6 @@ public class PlayerLook : MonoBehaviour
         {
             if (Cursor.lockState == CursorLockMode.Locked)
                 Cursor.lockState = CursorLockMode.None;
-            if (Cursor.lockState == CursorLockMode.None)
-                Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }
