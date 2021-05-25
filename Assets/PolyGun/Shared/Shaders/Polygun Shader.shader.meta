@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: b05b69ea02150f8499d9d794e128eb80
+timeCreated: 1594178374
+licenseType: Store
+ShaderImporter:
+  defaultTextures:
+  - _CamoTexture: {fileID: 2800000, guid: 1a86cdd094b89054bafdbb132926738d, type: 3}
+  - _TextureMask: {fileID: 2800000, guid: d72fca863ac1aa14d9cbfe509e725196, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
