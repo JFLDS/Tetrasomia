@@ -6,7 +6,22 @@ public class GameManager : MonoBehaviour
     private const string playerIdPrefix = "Player";
 
     private static Dictionary<string, Player> players = new Dictionary<string, Player>();
-    
+
+    public MatchSettings matchSettings;
+
+    public static GameManager instance;
+
+    public void Awake()
+    {
+        if(instance = null)
+        {
+            instance = this;
+            return;
+        }
+
+        Debug.LogError("plus d'une instance de GameManager dans la scène");
+    }
+
     public static void RegisterPlayer(string netID, Player player)
     {
         string playerId = playerIdPrefix + netID;

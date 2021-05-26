@@ -605,7 +605,7 @@ MonoBehaviour:
   syncInterval: 0.1
   weapon:
     nameW: AK47
-    damage: 10
+    damage: 20
     range: 100
   camera: {fileID: 7904578208704053829}
   mask:
@@ -626,6 +626,9 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   maxHealth: 100
+  disableOnDeath:
+  - {fileID: 1281624640159580431}
+  - {fileID: 7904578208265937164}
 --- !u!1 &7904578208374401669
 GameObject:
   m_ObjectHideFlags: 0
