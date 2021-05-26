@@ -11,6 +11,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float speed = 4f;
     [SerializeField] private float jump = 5f;
 
+    public bool isCrouching;
+
 
     void Start()
     {
@@ -28,14 +30,19 @@ public class PlayerMove : MonoBehaviour
         rb.velocity = new Vector3(move.x, rb.velocity.y, move.z);
 
         //Grounding
-        isGrounded = Physics.CheckSphere(new Vector3(transform.position.x, transform.position.y-1, transform.position.z), 0.4f, layerMask);
+        isGrounded = Physics.CheckSphere(new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), 0.4f, layerMask);
 
         //Jumping
-        if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector3(rb.velocity.x, jump, rb.velocity.z);
         }
 
-        
+        //Crouching
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            isCrouching = !isCrouching;
+        }
+
     }
 }
