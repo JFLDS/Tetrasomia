@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 6242876496500000621}
   - component: {fileID: 3266114955020865511}
   - component: {fileID: 548134753429495473}
+  - component: {fileID: -5603612138311223366}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -164,6 +165,7 @@ MonoBehaviour:
   - {fileID: 5558026173940971699}
   - {fileID: 5558026175840311924}
   - {fileID: 5558026175840311927}
+  remoteLayerName: RemotePlayer
 --- !u!114 &3266114955020865511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +209,21 @@ MonoBehaviour:
   interpolateScale: 1
   syncScale: 1
   target: {fileID: 5558026175840311926}
+--- !u!114 &-5603612138311223366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558026173940971701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b039be71372851f42b377a89cb65fd39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  maxHealth: 100
 --- !u!1 &5558026174093020980
 GameObject:
   m_ObjectHideFlags: 0

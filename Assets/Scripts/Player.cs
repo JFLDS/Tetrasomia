@@ -3,6 +3,13 @@ using Mirror;
 
 public class Player : NetworkBehaviour
 {
+    private bool _isDead = false;
+    public bool isDead
+    {
+        get { return _isDead; }
+        protected set { _isDead = value; }
+    }
+
     [SerializeField]
     private float maxHealth = 100f;
 
@@ -19,7 +26,8 @@ public class Player : NetworkBehaviour
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(float amount)
+    [ClientRpc]
+    public void RpcTakeDamage(float amount)
     {
         currentHealth -= amount;
         Debug.Log(transform.name + "a maintenant : " + currentHealth + "points de vies.");
