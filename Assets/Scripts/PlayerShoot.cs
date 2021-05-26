@@ -5,7 +5,7 @@ public class PlayerShoot : NetworkBehaviour
 {
     public PlayerWeap weapon;
     [SerializeField]
-    private Camera camera;
+    private new Camera camera;
     [SerializeField]
     private LayerMask mask;
     // Start is called before the first frame update
@@ -26,13 +26,16 @@ public class PlayerShoot : NetworkBehaviour
 
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, weapon.range, mask))
         {
-            if (hit.collider.tag == "Player")  CmdPlayerShot(hit.collider.name);
+            if (hit.collider.tag == "Player")  CmdPlayerShot(hit.collider.name, weapon.damage);
         }
     }
 
     [Command]
-    private void CmdPlayerShot (string Pname)
+    private void CmdPlayerShot(string Pname, float damage)
     {
         Debug.Log(Pname + " a été touché.");
+
+        Player player = GameManager.GetPlayer(Pname);
+        player.TakeDamage(damage);
     }
 }
