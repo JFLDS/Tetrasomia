@@ -479,6 +479,7 @@ MonoBehaviour:
   isGrounded: 0
   speed: 4
   jump: 5
+  isCrouching: 0
 --- !u!114 &4860408993953111211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,6 +518,8 @@ MonoBehaviour:
   - {fileID: 7904578208704053826}
   - {fileID: 1281624640159580431}
   remoteLayerName: RemotePlayer
+  playerUIPrefab: {fileID: 1044236144689478757, guid: bc2cce1b8d12bba4eb7534b60e310f5e,
+    type: 3}
 --- !u!114 &1708094094836795360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1224,6 +1227,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f882a638149ddfb4bbfc009561a7de4c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1082271958561512970, guid: f882a638149ddfb4bbfc009561a7de4c,
         type: 3}

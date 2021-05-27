@@ -8,7 +8,13 @@ public class PlayerSetup : NetworkBehaviour
 
     [SerializeField]
     string remoteLayerName = "RemotePlayer";
+
+    [SerializeField]
+    private GameObject playerUIPrefab;
+    private GameObject playerUIInstance;
+
     Camera sceneCamera;
+
     private void Start()
     {
         if (!isLocalPlayer)
@@ -23,6 +29,9 @@ public class PlayerSetup : NetworkBehaviour
         }
 
         GetComponent<Player>().Setup();
+
+        //UI local
+        playerUIInstance = Instantiate(playerUIPrefab);
     }
 
     public override void OnStartClient()
@@ -42,6 +51,8 @@ public class PlayerSetup : NetworkBehaviour
     }
     private void OnDisable()
     {
+        Destroy(playerUIInstance);
+
         if (sceneCamera != null) sceneCamera.gameObject.SetActive(true);
 
         GameManager.UnregisterPlayer(transform.name);
