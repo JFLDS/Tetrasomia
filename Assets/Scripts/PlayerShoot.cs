@@ -16,7 +16,12 @@ public class PlayerShoot : NetworkBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1")) Shoot();
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Shoot();
+            Debug.Log("ca tire belek");
+        }
+
     }
 
     [Client]
@@ -26,7 +31,8 @@ public class PlayerShoot : NetworkBehaviour
 
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, weapon.range, mask))
         {
-            if (hit.collider.tag == "Player")  CmdPlayerShot(hit.collider.name, weapon.damage);
+            Debug.Log("Objet touché : " + hit.collider.name);
+            //if (hit.collider.tag == "Player" || hit.collider.tag == "Ground")  CmdPlayerShot(hit.collider.name, weapon.damage);
         }
     }
 
