@@ -16,12 +16,13 @@ public class PlayerShoot : NetworkBehaviour
 
     private void Update()
     {
+        if (MenuPause.isOn) { return; }
+
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
             Debug.Log("ca tire belek");
         }
-
     }
 
     [Client]

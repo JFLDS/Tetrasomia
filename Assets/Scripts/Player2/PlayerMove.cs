@@ -21,6 +21,8 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        if(MenuPause.isOn) { return; }
+
         //Reading the Input
         float horizontal = Input.GetAxis("Horizontal") * speed;
         float vertical = Input.GetAxis("Vertical") * speed;

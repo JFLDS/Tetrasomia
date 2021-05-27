@@ -17,6 +17,20 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (MenuPause.isOn)
+        {
+            if (Cursor.lockState != CursorLockMode.None)
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
+            return;
+        }
+
+        if (Cursor.lockState != CursorLockMode.Locked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
         //Calcul de la vélocité                     //renvoie 0 si on ne bouge pas
         float xMovement = Input.GetAxisRaw("Horizontal");  //Q(touche négative)=(-1) & D(touche positive)=(1)
         float zMovement = Input.GetAxisRaw("Vertical");    //S(touche négative)=(-1) & Z(touche positive)=(1)
