@@ -1,20 +1,12 @@
 ﻿using UnityEngine;
 using Mirror;
-using System.Collections;
 
 public class Player : NetworkBehaviour
 {
-    [SyncVar]
-    private bool _isDead = false;
-    public bool isDead
-    {
-        get { return _isDead; }
-        protected set { _isDead = value; }
-    }
-
     [SerializeField]
     private float maxHealth = 100f;
 
+    //valeur modifiée chez toutes les instances
     [SyncVar]
     private float currentHealth;
 
@@ -56,13 +48,11 @@ public class Player : NetworkBehaviour
             }
             firstSetup = false;
         }
-
         SetDefaults();
     }
 
     public void SetDefaults()
     {
-        isDead = false;
         currentHealth = maxHealth;
 
         for (int i = 0; i < disableOnDeath.Length; i++)
@@ -86,49 +76,11 @@ public class Player : NetworkBehaviour
         transform.rotation = spawnPoint.rotation;
         yield return new WaitForSeconds(0.1f);
         Setup();
-
     }
 
-    [ClientRpc]
-    public void RpcTakeDamage(float amount, string sourceID)
+    public void TakeDamage(float amount)
     {
-        if (isDead) return;
         currentHealth -= amount;
-        Debug.Log(transform.name + "a maintenant : " + currentHealth + "points de vies.");
-
-        if(currentHealth <= 0)
-        {
-            Die(sourceID);
-        }
-    }
-
-    private void Die(string sourceID)
-    {
-        isDead = true;
-
-        Player sourcePlayer = GameManager.GetPlayer(sourceID);
-        if(sourcePlayer != null)
-        {
-            sourcePlayer.kills++;
-        }
-
-        deaths++;
-
-        //Désactive les components du joueur lors de la mort
-        for (int i = 0; i < disableOnDeath.Length; i++)
-        {
-            disableOnDeath[i].enabled = false;
-        }
-
-        //Désactive le collider du joueur
-        Collider col = GetComponent<Collider>();
-        if (col != null)
-        {
-            col.enabled = false;
-        }
-
-        Debug.Log(transform.name + "à passé l'arme à gauche");
-
-        StartCoroutine(Respawn());
+        Debug.Log(transform.name + " a maintenant : " + currentHealth + " PV");
     }
 }

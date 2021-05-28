@@ -1,22 +1,30 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody))] //permet de obliger l'utilisation de l'ature fichier et on empecher une suppression du fichier utile.
 public class PlayerMotor : MonoBehaviour
 {
+    //meme variable que dans PlayerControler
+    private Vector3 velocity;
+    private Vector3 rotation;
+    private float cameraRotationX = 0f;
+    private float currentRotationCameraX = 0f;
+    private Vector3 JumpForceVelocity;
+
     [SerializeField]
     private Camera cam;
 
-    private Vector3 velocity;
-    private Vector3 rotation;
-    private Vector3 rotationCam;
+    [SerializeField]
+    private float cameraRotationLimit = 70f;
+
+    //variable pour l'application des mouvements
     private Rigidbody rb;
 
-    // Start is called before the first frame update
     private void Start()
     {
-        rb = GetComponent<Rigidbody>(); 
+        rb = GetComponent<Rigidbody>();
     }
 
+    //fonction move qui prend la valeur de la vitesse
     public void Move(Vector3 _velocity)
     {
         velocity = _velocity;
@@ -27,36 +35,45 @@ public class PlayerMotor : MonoBehaviour
         rotation = _rotation;
     }
 
-    public void RotateCam(Vector3 _rotationCam)
+    public void RotateCamera(float _cameraRotationX)
     {
-        rotationCam = _rotationCam;
+        cameraRotationX = _cameraRotationX;
     }
 
+    public void ApplyJumpForce(Vector3 _JumpForceVelocity)
+    {
+        JumpForceVelocity = _JumpForceVelocity;
+    }
 
+    //delay d'appel
     private void FixedUpdate()
     {
-        PerformMovement();
-        PerformRotation();
+        performMovement();
+        performRotation();
     }
 
-    private void PerformMovement()
+    //applique la force ou le mouvement sur le RigidBody
+    private void performMovement()
     {
         if(velocity != Vector3.zero)
         {
             rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
         }
+
+        if(JumpForceVelocity != Vector3.zero)
+        {
+            rb.AddForce(JumpForceVelocity * Time.fixedDeltaTime, ForceMode.Acceleration);
+        }
     }
 
-    private void PerformRotation()
+    private void performRotation()
     {
+        //on calcul la rotation de la camera
         rb.MoveRotation(rb.rotation * Quaternion.Euler(rotation));
-        cam.transform.Rotate(-rotationCam); //si on ne mets pas le - on est en camera inversé
+        currentRotationCameraX -= cameraRotationX;
+        currentRotationCameraX = Mathf.Clamp(currentRotationCameraX, -cameraRotationLimit, cameraRotationLimit);
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //on applique la rotation de la camera
+        cam.transform.localEulerAngles = new Vector3(currentRotationCameraX, 0f, 0f);
     }
 }
