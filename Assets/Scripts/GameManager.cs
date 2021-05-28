@@ -1,47 +1,25 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
+    private static Dictionary<string, Player> players = new Dictionary<string, Player>();
     private const string playerIdPrefix = "Player";
 
-    private static Dictionary<string, Player> players = new Dictionary<string, Player>();
-
-    public MatchSettings matchSettings;
-
-    public static GameManager instance;
-
-    public void Awake()
+    public static void RegisterPlayers(string netID, Player player)
     {
-        if(instance = null)
-        {
-            instance = this;
-            return;
-        }
-
-        Debug.LogError("plus d'une instance de GameManager dans la scène");
+        string playerID = playerIdPrefix + netID;
+        players.Add(playerID, player);
+        player.transform.name = playerID;
     }
 
-    public static void RegisterPlayer(string netID, Player player)
+    public static void UnregisterPlayer(string playerID)
     {
-        string playerId = playerIdPrefix + netID;
-        players.Add(playerId, player);
-        player.transform.name = playerId;
+        players.Remove(playerID);
     }
 
-    public static void UnregisterPlayer(string playerId)
+    public static Player GetPlayer(string playerID)
     {
-        players.Remove(playerId);
-    }
-
-    public static Player GetPlayer(string playerId)
-    {
-        return players[playerId];
-    }
-
-    public static Player[] GetAllPlayers()
-    {
-        return players.Values.ToArray();
+        return players[playerID];
     }
 }

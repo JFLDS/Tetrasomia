@@ -3,47 +3,53 @@ using Mirror;
 
 public class PlayerShoot : NetworkBehaviour
 {
-    public PlayerWeap weapon;
-    [SerializeField]
-    private new Camera camera;
-    [SerializeField]
-    private LayerMask mask;
+    public PlayerWeapon weapon;
 
-    // Start is called before the first frame update
+    [SerializeField]
+    Camera cam;
+
+    [SerializeField]
+    LayerMask mask;
+
     void Start()
     {
-        if (camera == null) Debug.LogError("Pas de caméra."); this.enabled = false;
+        if(cam == null)
+        {
+            Debug.LogError("Pas de camera renseignée sur le systeme de tir");
+            //desactive le script sur le shoot
+            this.enabled = false;
+        }
     }
 
     private void Update()
     {
-        if (MenuPause.isOn) { return; }
-
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
-            Debug.Log("ca tire belek");
         }
     }
 
+    //systeme de tir
     [Client]
     private void Shoot()
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, weapon.range, mask))
+        if( Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, weapon.range, mask))
         {
-            Debug.Log("Objet touché : " + hit.collider.name);
-            if (hit.collider.tag == "Player" || hit.collider.tag == "Ground")  CmdPlayerShot(hit.collider.name, weapon.damage, transform.name);
+            if(hit.collider.tag == "Player")
+            {
+                CmdPlayerShot(hit.collider.name, weapon.damage);
+            }
         }
     }
 
     [Command]
-    private void CmdPlayerShot(string Pname, float damage, string sourceID)
+    private void CmdPlayerShot(string playerId, float damage)
     {
-        Debug.Log(Pname + " a été touché.");
+        Debug.Log(playerId + " a été touché");
 
-        Player player = GameManager.GetPlayer(Pname);
-        player.RpcTakeDamage(damage, sourceID);
+        Player player = GameManager.GetPlayer(playerId);
+        player.TakeDamage(damage);
     }
 }
