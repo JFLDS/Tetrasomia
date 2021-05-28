@@ -38,7 +38,7 @@ public class Player : NetworkBehaviour
         CmdBroadcastNewPlayerSetup();
     }
 
-    [Command] //(ignoreAuthority = true)
+    [Command]
     private void CmdBroadcastNewPlayerSetup()
     {
         RpcSetupPlayerOnAllClients();
@@ -84,7 +84,6 @@ public class Player : NetworkBehaviour
         Transform spawnPoint = NetworkManager.singleton.GetStartPosition();
         transform.position = spawnPoint.position;
         transform.rotation = spawnPoint.rotation;
-        yield return new WaitForSeconds(0.1f);
         Setup();
 
     }

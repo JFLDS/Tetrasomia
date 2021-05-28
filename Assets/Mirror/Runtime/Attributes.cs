@@ -22,7 +22,6 @@ namespace Mirror
     {
         public int channel = Channels.Reliable;
         public bool requiresAuthority = true;
-        public bool ignoreAuthority;
     }
 
     /// <summary>
