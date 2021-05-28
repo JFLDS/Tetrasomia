@@ -1,9 +1,8 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using Mirror;
-
-public class playerSetup : NetworkBehaviour
+public class PlayerSetup : NetworkBehaviour
 {
-    //tableau pour désactiver les scripts des autres joueurs
     [SerializeField]
     Behaviour[] componentToDisable;
     [SerializeField]
@@ -29,41 +28,32 @@ public class playerSetup : NetworkBehaviour
 
             GetComponent<Player>().Setup();
         }
+
+        //UI local
+        playerUIInstance = Instantiate(playerUIPrefab);
     }
 
-    //place les joueurs dans un tableau
     public override void OnStartClient()
     {
         base.OnStartClient();
 
-        string netID = GetComponent<NetworkIdentity>().netId.ToString();
+        string netId = GetComponent<NetworkIdentity>().netId.ToString();
         Player player = GetComponent<Player>();
-        GameManager.RegisterPlayers(netID, player);
+
+        GameManager.RegisterPlayer(netId, player);
     }
 
-    private void AssignRemoteLayer()
-    {
-        gameObject.layer = LayerMask.NameToLayer(remoteLayerName);
-    }
+    private void AssignRemoteLayer() { gameObject.layer = LayerMask.NameToLayer(remoteLayerName); }
 
-    //Necessaire pour eviter de se toucher sois meme
-    private void DisableComponents()
-    {
-        for (int i = 0; i < componentsToDisable.Length; i++)
-        {
-            componentsToDisable[i].enabled = false;
-        }
+    private void DisableComponents() {
+        for (int i = 0; i < componentToDisable.Length; i++) componentToDisable[i].enabled = false;
     }
-
-    //si un joueur se deco
     private void OnDisable()
     {
-
         Destroy(playerUIInstance);
 
         if (isLocalPlayer) sceneCamera.gameObject.SetActive(true);
 
-        //supprime le joueur du dictionnaire
         GameManager.UnregisterPlayer(transform.name);
     }
 }

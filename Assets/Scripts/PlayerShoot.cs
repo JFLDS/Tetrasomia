@@ -3,53 +3,47 @@ using Mirror;
 
 public class PlayerShoot : NetworkBehaviour
 {
-    public PlayerWeapon weapon;
-
+    public PlayerWeap weapon;
     [SerializeField]
-    Camera cam;
-
+    private new Camera camera;
     [SerializeField]
-    LayerMask mask;
+    private LayerMask mask;
 
+    // Start is called before the first frame update
     void Start()
     {
-        if(cam == null)
-        {
-            Debug.LogError("Pas de camera renseignée sur le systeme de tir");
-            //desactive le script sur le shoot
-            this.enabled = false;
-        }
+        if (camera == null) Debug.LogError("Pas de caméra."); this.enabled = false;
     }
 
     private void Update()
     {
+        if (MenuPause.isOn) { return; }
+
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
+            Debug.Log("ca tire belek");
         }
     }
 
-    //systeme de tir
     [Client]
     private void Shoot()
     {
         RaycastHit hit;
 
-        if( Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, weapon.range, mask))
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, weapon.range, mask))
         {
-            if(hit.collider.tag == "Player")
-            {
-                CmdPlayerShot(hit.collider.name, weapon.damage);
-            }
+            Debug.Log("Objet touché : " + hit.collider.name);
+            if (hit.collider.tag == "Player" || hit.collider.tag == "Ground")  CmdPlayerShot(hit.collider.name, weapon.damage, transform.name);
         }
     }
 
     [Command]
-    private void CmdPlayerShot(string playerId, float damage)
+    private void CmdPlayerShot(string Pname, float damage, string sourceID)
     {
-        Debug.Log(playerId + " a été touché");
+        Debug.Log(Pname + " a été touché.");
 
-        Player player = GameManager.GetPlayer(playerId);
-        player.TakeDamage(damage);
+        Player player = GameManager.GetPlayer(Pname);
+        player.RpcTakeDamage(damage, sourceID);
     }
 }
