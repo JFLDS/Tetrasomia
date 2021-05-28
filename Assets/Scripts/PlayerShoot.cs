@@ -12,7 +12,7 @@ public class PlayerShoot : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (camera == null) Debug.LogError("Pas de caméra."); this.enabled = false;
+        if (camera == null) { Debug.LogError("Pas de caméra."); this.enabled = false; }
     }
 
     private void Update()
