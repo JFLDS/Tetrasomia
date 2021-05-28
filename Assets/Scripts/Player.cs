@@ -25,12 +25,36 @@ public class Player : NetworkBehaviour
     private Behaviour[] disableOnDeath;
     private bool[] wasEnabledOnStart;
 
+
+    private bool firstSetup = true;
+
     public void Setup()
     {
-        wasEnabledOnStart = new bool[disableOnDeath.Length];
-        for(int i = 0; i < disableOnDeath.Length; i++)
+        if (isLocalPlayer)
         {
-            wasEnabledOnStart[i] = disableOnDeath[i].enabled;
+            //Changement de caméra
+            
+        }
+        CmdBroadcastNewPlayerSetup();
+    }
+
+    [Command]
+    private void CmdBroadcastNewPlayerSetup()
+    {
+        RpcSetupPlayerOnAllClients();
+    }
+
+    [ClientRpc]
+    private void RpcSetupPlayerOnAllClients()
+    {
+        if (firstSetup)
+        {
+            wasEnabledOnStart = new bool[disableOnDeath.Length];
+            for (int i = 0; i < disableOnDeath.Length; i++)
+            {
+                wasEnabledOnStart[i] = disableOnDeath[i].enabled;
+            }
+            firstSetup = false;
         }
 
         SetDefaults();
@@ -46,6 +70,7 @@ public class Player : NetworkBehaviour
             disableOnDeath[i].enabled = wasEnabledOnStart[i];
         }
 
+        //Réactive le collider du joueur
         Collider col = GetComponent<Collider>();
         if(col != null)
         {
@@ -56,10 +81,11 @@ public class Player : NetworkBehaviour
     private IEnumerator Respawn()
     {
         yield return new WaitForSeconds(GameManager.instance.matchSettings.respawnTimer);
-        SetDefaults();
         Transform spawnPoint = NetworkManager.singleton.GetStartPosition();
         transform.position = spawnPoint.position;
         transform.rotation = spawnPoint.rotation;
+        Setup();
+
     }
 
     [ClientRpc]
