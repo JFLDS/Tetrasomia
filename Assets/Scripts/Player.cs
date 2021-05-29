@@ -19,6 +19,9 @@ public class Player : NetworkBehaviour
     [SyncVar]
     private float currentHealth;
 
+    public int kills;
+    public int deaths;
+
     [SerializeField]
     private Behaviour[] disableOnDeath;
     private bool[] wasEnabledOnStart;
@@ -61,7 +64,7 @@ public class Player : NetworkBehaviour
     }
 
     [ClientRpc]
-    public void RpcTakeDamage(float amount)
+    public void RpcTakeDamage(float amount, string sourceID)
     {
         if (isDead) return;
         currentHealth -= amount;
@@ -69,19 +72,29 @@ public class Player : NetworkBehaviour
 
         if(currentHealth <= 0)
         {
-            Die();
+            Die(sourceID);
         }
     }
 
-    private void Die()
+    private void Die(string sourceID)
     {
         isDead = true;
 
+        Player sourcePlayer = GameManager.GetPlayer(sourceID);
+        if(sourcePlayer != null)
+        {
+            sourcePlayer.kills++;
+        }
+
+        deaths++;
+
+        //Désactive les components du joueur lors de la mort
         for (int i = 0; i < disableOnDeath.Length; i++)
         {
             disableOnDeath[i].enabled = false;
         }
 
+        //Désactive le collider du joueur
         Collider col = GetComponent<Collider>();
         if (col != null)
         {

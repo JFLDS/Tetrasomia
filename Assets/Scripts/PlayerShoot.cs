@@ -8,10 +8,11 @@ public class PlayerShoot : NetworkBehaviour
     private new Camera camera;
     [SerializeField]
     private LayerMask mask;
+
     // Start is called before the first frame update
     void Start()
     {
-        if (camera == null) Debug.LogError("Pas de caméra."); this.enabled = false;
+        if (camera == null) { Debug.LogError("Pas de caméra."); this.enabled = false; }
     }
 
     private void Update()
@@ -33,16 +34,16 @@ public class PlayerShoot : NetworkBehaviour
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, weapon.range, mask))
         {
             Debug.Log("Objet touché : " + hit.collider.name);
-            //if (hit.collider.tag == "Player" || hit.collider.tag == "Ground")  CmdPlayerShot(hit.collider.name, weapon.damage);
+            if (hit.collider.tag == "Player" || hit.collider.tag == "Ground")  CmdPlayerShot(hit.collider.name, weapon.damage, transform.name);
         }
     }
 
     [Command]
-    private void CmdPlayerShot(string Pname, float damage)
+    private void CmdPlayerShot(string Pname, float damage, string sourceID)
     {
         Debug.Log(Pname + " a été touché.");
 
         Player player = GameManager.GetPlayer(Pname);
-        player.RpcTakeDamage(damage);
+        player.RpcTakeDamage(damage, sourceID);
     }
 }
