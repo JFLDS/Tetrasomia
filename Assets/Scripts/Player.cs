@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using Mirror;
 using System.Collections;
 
@@ -32,7 +33,7 @@ public class Player : NetworkBehaviour
 
         SetDefaults();
     }
-
+   
     public void SetDefaults()
     {
         isDead = false;
