@@ -48,9 +48,11 @@ public class Player : NetworkBehaviour
         }
 
         Collider col = GetComponent<Collider>();
-        if(col != null)
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (col != null && rb != null)
         {
             col.enabled = true;
+            rb.useGravity = true;
         }
     }
 
@@ -96,9 +98,11 @@ public class Player : NetworkBehaviour
 
         //Désactive le collider du joueur
         Collider col = GetComponent<Collider>();
-        if (col != null)
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (col != null && rb != null)
         {
             col.enabled = false;
+            rb.useGravity = false;
         }
 
         Debug.Log(transform.name + "à passé l'arme à gauche");
