@@ -43,16 +43,47 @@ public class PlayerShoot : NetworkBehaviour
         }
     }
 
+    [Command]
+    void CmdOnHit(Vector3 pos, Vector3 normal)
+    {
+        RpcDoHitEffect(pos,normal);
+    }
+
+    [ClientRpc]
+    void RpcDoHitEffect(Vector3 pos, Vector3 normal)
+    {
+        GameObject hitEffect = Instantiate(weaponManager.GetCurrentGFX().HitEffectPrefab, pos, Quaternion.LookRotation(normal));
+        Destroy(hitEffect, 2f);
+    }
+
+    [Command]
+    void CmdOnShoot()
+    {
+        RpcDoShootEffect();
+    }
+
+    //Fais apparaître les effets de tir chez tlm.
+    [ClientRpc]
+    void RpcDoShootEffect()
+    {
+        weaponManager.GetCurrentGFX().muzzleFlash.Play();
+    }
     [Client]
     private void Shoot()
     {
-        Debug.Log("Ca tire chakal");
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+
+        CmdOnShoot();
         RaycastHit hit;
 
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, currentWeapon.range, mask))
         {
             Debug.Log("Objet touché : " + hit.collider.name);
-            if (hit.collider.tag == "Player" || hit.collider.tag == "Ground")  CmdPlayerShot(hit.collider.name, currentWeapon.damage, transform.name);
+            if (hit.collider.tag == "Player")  CmdPlayerShot(hit.collider.name, currentWeapon.damage, transform.name);
+            CmdOnHit(hit.point, hit.normal);
         }
     }
 
