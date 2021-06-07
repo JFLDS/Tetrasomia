@@ -68,6 +68,7 @@ public class PlayerShoot : NetworkBehaviour
     {
         weaponManager.GetCurrentGFX().muzzleFlash.Play();
     }
+
     [Client]
     private void Shoot()
     {
