@@ -24,11 +24,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229633966398694393}
   m_LocalRotation: {x: -0.31969392, y: -0.6749726, z: -0.50777596, w: 0.42938498}
-  m_LocalPosition: {x: -0.066, y: -0.017, z: 0.225}
+  m_LocalPosition: {x: -0.066, y: -0.017000005, z: 0.22500002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8926872461758688315}
-  m_RootOrder: 10
+  m_Father: {fileID: 1497905785615270694}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -106.257996, y: 65.615, z: -180.92}
 --- !u!1 &1229633966659853340
 GameObject:
@@ -57,8 +57,8 @@ Transform:
   m_LocalPosition: {x: 0.031795964, y: -0.02968359, z: -0.11872439}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8926872461758688315}
-  m_RootOrder: 9
+  m_Father: {fileID: 1497905785615270694}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 8.905001, y: -90.44601, z: -94.23}
 --- !u!1 &1497905785615270689
 GameObject:
@@ -70,6 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1497905785615270694}
   - component: {fileID: 4690434877389866011}
+  - component: {fileID: -7770324417916617435}
   m_Layer: 8
   m_Name: AR-06
   m_TagString: Untagged
@@ -90,6 +91,8 @@ Transform:
   m_Children:
   - {fileID: 8926872461758688315}
   - {fileID: 2081631993916076694}
+  - {fileID: 1229633966659853331}
+  - {fileID: 1229633966398694392}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -108,6 +111,18 @@ MonoBehaviour:
   muzzleFlash: {fileID: 8327236735167498991}
   HitEffectPrefab: {fileID: 2439511842150134969, guid: 9a438ceec533c394d88b2028adf687fc,
     type: 3}
+--- !u!114 &-7770324417916617435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497905785615270689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48948dfe9d76b07488dacd46a7955fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8327236735181362061
 GameObject:
   m_ObjectHideFlags: 0
@@ -10637,8 +10652,6 @@ Transform:
   - {fileID: 8926872461758688257}
   - {fileID: 8926872461758688259}
   - {fileID: 8926872461758688285}
-  - {fileID: 1229633966659853331}
-  - {fileID: 1229633966398694392}
   m_Father: {fileID: 1497905785615270694}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 7.203001, y: 0.025, z: 1.909}
