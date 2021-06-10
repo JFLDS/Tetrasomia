@@ -67,6 +67,7 @@ public class PlayerShoot : NetworkBehaviour
     void RpcDoShootEffect()
     {
         weaponManager.GetCurrentGFX().muzzleFlash.Play();
+   
     }
 
     [Client]
