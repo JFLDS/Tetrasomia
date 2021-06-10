@@ -2593,7 +2593,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   isGrounded: 0
-  speed: 8
+  speed: 6
   jump: 5
   isCrouching: 0
 --- !u!114 &4860408993953111211
