@@ -6,6 +6,7 @@ public class PlayerShoot : NetworkBehaviour
 {   
     [SerializeField]
     private new Camera camera;
+
     [SerializeField]
     private LayerMask mask;
 
@@ -15,7 +16,10 @@ public class PlayerShoot : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (camera == null) { Debug.LogError("Pas de caméra."); this.enabled = false; }
+        if (camera == null) { 
+            Debug.LogError("Pas de caméra."); 
+            this.enabled = false; 
+        }
 
         weaponManager = GetComponent<WeaponManager>();
     }
@@ -23,7 +27,8 @@ public class PlayerShoot : NetworkBehaviour
     private void Update()
     {
         currentWeapon = weaponManager.GetCurrentWeapon();
-        if (MenuPause.isOn) { return; }
+        if (MenuPause.isOn) return;
+
         if (currentWeapon.fireRate <= 0f)
         {
             if (Input.GetButtonDown("Fire1"))
@@ -77,15 +82,16 @@ public class PlayerShoot : NetworkBehaviour
         {
             return;
         }
-
-        CmdOnShoot();
+        // Erreur servernetwork not ready
+       // CmdOnShoot();
         RaycastHit hit;
 
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, currentWeapon.range, mask))
         {
             Debug.Log("Objet touché : " + hit.collider.name);
             if (hit.collider.tag == "Player")  CmdPlayerShot(hit.collider.name, currentWeapon.damage, transform.name);
-            CmdOnHit(hit.point, hit.normal);
+            //same que l'autre erreur servernetwork
+            // CmdOnHit(hit.point, hit.normal);
         }
     }
 
