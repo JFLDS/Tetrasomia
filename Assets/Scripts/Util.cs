@@ -1,15 +1,14 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Util
 {
-   /*public static void SetLayerRecursively(GameObject obj, int newLayer)
+   public static void SetLayerRecursively(GameObject obj, int newLayer)
     {
         obj.layer = newLayer;
 
         foreach (Transform child in obj.transform)
         {
-            SetLayerRecursively(child.GameObject, newLayer);
+            SetLayerRecursively(child.gameObject, newLayer);
         }
-    }*/
+    }
 }

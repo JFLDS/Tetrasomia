@@ -13,6 +13,9 @@ public class PlayerShoot : NetworkBehaviour
     public PlayerWeap currentWeapon;
     private WeaponManager weaponManager;
 
+    [SerializeField]
+    private GameObject camGFX;  //L'arme fixer à la camera seulement visible depuis la pov du local player!
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,10 @@ public class PlayerShoot : NetworkBehaviour
         }
 
         weaponManager = GetComponent<WeaponManager>();
+
+        //On met les layer de l'arme, et de ces enfants, attaché à la camera à "Weapon"
+        //camGFX.layer = LayerMask.NameToLayer(weaponLayerName);
+        Util.SetLayerRecursively(camGFX, LayerMask.NameToLayer("Weapon"));
     }
 
     private void Update()

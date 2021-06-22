@@ -8,12 +8,13 @@ public class WeaponManager : NetworkBehaviour
 
     private PlayerWeap currentWeapon;
 
-    private WeaponGFX currentGFX; 
+    private WeaponGFX currentGFX;
 
     [SerializeField]
-    private Transform WeaponPivot;
-    [SerializeField]
-    private string weaponLayerName = "Weapon";
+    private GameObject camGFX;  //L'arme fixer à la camera seulement visible depuis la pov du local player!
+
+    [SerializeField] private Transform WeaponPivot;
+    [SerializeField] private string weaponLayerName = "Weapon";
 
     void Start()
     {
@@ -37,9 +38,23 @@ public class WeaponManager : NetworkBehaviour
 
         if (isLocalPlayer)
         {
-            weaponIns.layer = LayerMask.NameToLayer(weaponLayerName);
-
+            //weaponIns.layer = LayerMask.NameToLayer(weaponLayerName);
             //Util.SetLayerRecursively(weaponIns, LayerMask.NameToLayer(weaponLayerName));
+
+            //fonctionne pas
+            //On met les layer de l'arme, et de ces enfants, attaché à la camera à "Weapon"
+            camGFX.layer = LayerMask.NameToLayer(weaponLayerName);
+            SetLayerRecursively(camGFX, LayerMask.NameToLayer(weaponLayerName));
+        }
+    }
+
+    public static void SetLayerRecursively(GameObject obj, int newLayer)
+    {
+        obj.layer = newLayer;
+
+        foreach (Transform child in obj.transform)
+        {
+            SetLayerRecursively(child.gameObject, newLayer);
         }
     }
 }

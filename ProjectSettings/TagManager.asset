@@ -16,6 +16,7 @@ TagManager:
   - LocalPlayer
   - RemotePlayer
   - Ground
+  - Weapon
   - 
   - 
   - 
@@ -35,8 +36,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Hide
   m_SortingLayers:
   - name: Default
     uniqueID: 0
