@@ -10,7 +10,7 @@ public class Killfeed : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.instance.onPlayerKilledCallBack += OnKill;
+        //GameManager.instance.onPlayerKilledCallBack += OnKill;
     }
 
     public void OnKill(string killed, string killer)
