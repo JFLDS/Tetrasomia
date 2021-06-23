@@ -95,7 +95,7 @@ public class PlayerShoot : NetworkBehaviour
 
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, currentWeapon.range, mask))
         {
-            Debug.Log("Objet touché : " + hit.collider.name);
+            //Debug.Log("Objet touché : " + hit.collider.name);
             if (hit.collider.tag == "Player")  CmdPlayerShot(hit.collider.name, currentWeapon.damage, transform.name);
             //same que l'autre erreur servernetwork
             // CmdOnHit(hit.point, hit.normal);
