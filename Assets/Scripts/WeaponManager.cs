@@ -44,17 +44,7 @@ public class WeaponManager : NetworkBehaviour
             //fonctionne pas
             //On met les layer de l'arme, et de ces enfants, attaché à la camera à "Weapon"
             camGFX.layer = LayerMask.NameToLayer(weaponLayerName);
-            SetLayerRecursively(camGFX, LayerMask.NameToLayer(weaponLayerName));
-        }
-    }
-
-    public static void SetLayerRecursively(GameObject obj, int newLayer)
-    {
-        obj.layer = newLayer;
-
-        foreach (Transform child in obj.transform)
-        {
-            SetLayerRecursively(child.gameObject, newLayer);
+            Util.SetLayerRecursively(camGFX, LayerMask.NameToLayer(weaponLayerName));
         }
     }
 }

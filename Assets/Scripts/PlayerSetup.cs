@@ -13,6 +13,9 @@ public class PlayerSetup : NetworkBehaviour
     private GameObject playerUIPrefab;
     private GameObject playerUIInstance;
 
+    [SerializeField]
+    private GameObject camGFX;
+
     Camera sceneCamera;
 
     private void Start()
@@ -44,7 +47,13 @@ public class PlayerSetup : NetworkBehaviour
         GameManager.RegisterPlayer(netId, player);
     }
 
-    private void AssignRemoteLayer() { gameObject.layer = LayerMask.NameToLayer(remoteLayerName); }
+    private void AssignRemoteLayer() {
+        //gameObject.layer = LayerMask.NameToLayer(remoteLayerName);
+        Util.SetLayerRecursively(gameObject, LayerMask.NameToLayer(remoteLayerName));
+        Util.SetLayerRecursively(camGFX, LayerMask.NameToLayer("Hide"));
+
+
+    }
 
     private void DisableComponents() {
         for (int i = 0; i < componentToDisable.Length; i++) componentToDisable[i].enabled = false;

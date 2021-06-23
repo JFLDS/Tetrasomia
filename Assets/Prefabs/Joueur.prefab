@@ -13591,6 +13591,7 @@ MonoBehaviour:
   remoteLayerName: RemotePlayer
   playerUIPrefab: {fileID: 1044236144689478757, guid: bc2cce1b8d12bba4eb7534b60e310f5e,
     type: 3}
+  camGFX: {fileID: 3247961007092347741}
 --- !u!114 &4226432349411046890
 MonoBehaviour:
   m_ObjectHideFlags: 0
