@@ -31,7 +31,7 @@ namespace Mirror
             if (!showGUI) return;
 #pragma warning restore 618
 
-            GUILayout.BeginArea(new Rect(10 + offsetX, 40 + offsetY, 1000, 9999));
+            GUILayout.BeginArea(new Rect(10 + offsetX, 40 + offsetY, 200, 9999));
             if (!NetworkClient.isConnected && !NetworkServer.active)
             {
                 StartButtons();
@@ -41,7 +41,7 @@ namespace Mirror
                 StatusLabels();
             }
 
-            /* client ready
+            // client ready
             if (NetworkClient.isConnected && !NetworkClient.ready)
             {
                 if (GUILayout.Button("Client Ready"))
@@ -52,7 +52,7 @@ namespace Mirror
                         NetworkClient.AddPlayer();
                     }
                 }
-            }*/
+            }
 
             StopButtons();
 
@@ -65,8 +65,7 @@ namespace Mirror
             int ypos = 40 + offsetY;
             if (!NetworkClient.active)
             {
-                manager.networkAddress = GUI.TextField(new Rect(xpos + 320, ypos + 320, 95, 20), manager.networkAddress); //GUILayout.TextField(manager.networkAddress);
-                /* Server + Client
+                // Server + Client
                 if (Application.platform != RuntimePlatform.WebGLPlayer)
                 {
                     if (GUILayout.Button("Host (Server + Client)"))
@@ -81,7 +80,7 @@ namespace Mirror
                 {
                     manager.StartClient();
                 }
-                
+                manager.networkAddress = GUILayout.TextField(manager.networkAddress);
                 GUILayout.EndHorizontal();
 
                 // Server Only
@@ -102,13 +101,13 @@ namespace Mirror
                 if (GUILayout.Button("Cancel Connection Attempt"))
                 {
                     manager.StopClient();
-                }*/
+                }
             }
         }
 
         void StatusLabels()
         {
-            /* server / client status message
+            // server / client status message
             if (NetworkServer.active)
             {
                 GUILayout.Label("Server: active. Transport: " + Transport.activeTransport);
@@ -116,12 +115,12 @@ namespace Mirror
             if (NetworkClient.isConnected)
             {
                 GUILayout.Label("Client: address=" + manager.networkAddress);
-            }*/
+            }
         }
 
         void StopButtons()
         {
-            /* stop host if host mode
+            // stop host if host mode
             if (NetworkServer.active && NetworkClient.isConnected)
             {
                 if (GUILayout.Button("Stop Host"))
@@ -144,7 +143,7 @@ namespace Mirror
                 {
                     manager.StopServer();
                 }
-            }*/
+            }
         }
     }
 }

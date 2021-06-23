@@ -51,8 +51,6 @@ public class PlayerSetup : NetworkBehaviour
         //gameObject.layer = LayerMask.NameToLayer(remoteLayerName);
         Util.SetLayerRecursively(gameObject, LayerMask.NameToLayer(remoteLayerName));
         Util.SetLayerRecursively(camGFX, LayerMask.NameToLayer("Hide"));
-
-
     }
 
     private void DisableComponents() {
