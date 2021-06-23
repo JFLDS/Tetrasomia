@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public OnPlayerKilledCallBack onPlayerKilledCallBack;
     public void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
             return;

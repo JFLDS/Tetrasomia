@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Killfeed : MonoBehaviour
 {
@@ -17,6 +15,6 @@ public class Killfeed : MonoBehaviour
     {
         GameObject go = Instantiate(killfeedItemPrefab, transform);
         go.GetComponent<KillfeedItem>().Setup(killed, killer);
-        Destroy(go, 5f);
+        Destroy(go, 3f);
     }
 }

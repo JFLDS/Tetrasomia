@@ -19,6 +19,11 @@ public class Player : NetworkBehaviour
     [SyncVar]
     private float currentHealth;
 
+    public float GetHealthPct()
+    {
+        return (float) currentHealth / maxHealth;
+    }
+
     public int kills;
     public int deaths;
 

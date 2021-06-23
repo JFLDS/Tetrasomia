@@ -3,10 +3,20 @@
 public class PlayerUI : MonoBehaviour
 {
     [SerializeField]
+    private RectTransform healthbarFill;
+
+    private Player player;
+
+    [SerializeField]
     private GameObject menuPause;
 
     [SerializeField]
     private GameObject tableauDesScores;
+
+    public void SetPlayer(Player _player)
+    {
+        player = _player;
+    }
 
     private void Start()
     {
@@ -15,6 +25,7 @@ public class PlayerUI : MonoBehaviour
 
     private void Update()
     {
+        SetHealthAmount(player.GetHealthPct());
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePauseMenu();
@@ -33,6 +44,11 @@ public class PlayerUI : MonoBehaviour
     {
         menuPause.SetActive(!menuPause.activeSelf);
         MenuPause.isOn = menuPause.activeSelf;
+    }
+
+    void SetHealthAmount(float _amount)
+    {
+        healthbarFill.localScale = new Vector3(1f, _amount, 1f);
     }
 
 }

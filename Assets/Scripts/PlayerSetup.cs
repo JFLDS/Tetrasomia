@@ -1,6 +1,8 @@
 ﻿
 using UnityEngine;
 using Mirror;
+
+[RequireComponent(typeof(Player))]
 public class PlayerSetup : NetworkBehaviour
 {
     [SerializeField]
@@ -29,12 +31,21 @@ public class PlayerSetup : NetworkBehaviour
         {
             sceneCamera = Camera.main;
             if (sceneCamera != null) sceneCamera.gameObject.SetActive(false);
-        }
 
+            playerUIInstance = Instantiate(playerUIPrefab);
+            PlayerUI ui = playerUIInstance.GetComponent<PlayerUI>();
+            if (ui == null)
+            {
+                Debug.LogError("Pas de Component Player UI sur playerUIInstance");
+            }
+            else
+            {
+                ui.SetPlayer(GetComponent<Player>());
+            }
+
+        }
         GetComponent<Player>().Setup();
 
-        //UI local
-        playerUIInstance = Instantiate(playerUIPrefab);
     }
 
     public override void OnStartClient()

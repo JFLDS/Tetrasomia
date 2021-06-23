@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using Mirror;
 
 public class RecupText : MonoBehaviour
@@ -10,11 +11,8 @@ public class RecupText : MonoBehaviour
         manager = GetComponent<NetworkManager>();
     }
 
-    void OnGUI()
+    public void A(Text networkAddress)
     {
-        if (!NetworkClient.isConnected && !NetworkServer.active)
-        {
-            manager.networkAddress = GUI.TextField(new Rect(30, 30, 95, 20), manager.networkAddress);
-        }
+        manager.networkAddress = networkAddress.text;
     }
 }
