@@ -19,3 +19,5 @@ Dans la partie Gameplay :
 
 
 Dans le cas où l'on se connecte en ligne avec Mirror, nous avons décider d'utiliser le logiciel "LogMeIn Hamachi" car Mirror ne prend que en compte les réseaux LAN. Hamachi sert à simuler un réseau LAN en étant à distance sur un réseau différent. Attention si vous utiliser Hamachi, ne pas oublier d'autoriser le logiciel dans les pare-feu si la connexion ne se fait pas.
+
+Scénario exceptionnel : si l'on décide de lancer une partie tout seul, la partie se déroule normalement mais il n'y a pas de fin car pas de possibilité de tuer un adversaire. Il est possible de tirer et se déplacer ainsi que quitter la partie. Si vous voulez visiter la map, profitez.
