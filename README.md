@@ -1,7 +1,7 @@
 # Tetrasomia
 PROJET L3 - Réalisé par FONSECA Jordan, EBOR Tilio, CHAPLAIS Alexandre, PEIRAZEAU Fabien
 
-Aimant tous les 4 les jeux de types FPS nous avons eu l'idée de ce projet, de concevoir un jeu inspiré d'autres auquels nous jouons, mais en rajoutant notre touche personnelle dans ce projet.
+Le contexte : Aimant tous les 4 les jeux de types FPS nous avons eu l'idée de ce projet, de concevoir un jeu inspiré d'autres auquels nous jouons, mais en rajoutant notre touche personnelle dans ce projet.
 
 Le but du projet est de réaliser un jeu vidéo de type FPS inspiré de "Counter Strike", "Valorant" ou encore du mode escarmouche de "Call of Duty" sur le logiciel Unity. 
 
