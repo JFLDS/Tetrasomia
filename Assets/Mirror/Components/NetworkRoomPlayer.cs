@@ -148,18 +148,11 @@ namespace Mirror
             }
         }
 
-        public static string renommer;
-
-        public void Renommer(Text username)
-        {
-            renommer = username.text;
-        }
-
         void DrawPlayerReadyState()
         {
             GUILayout.BeginArea(new Rect(320f + (index * 100), 200f, 120f, 130f));
 
-            GUILayout.Label(renommer);
+            GUILayout.Label("Ready ?");
 
             if (readyToBegin)
                 GUILayout.Label("Ready");

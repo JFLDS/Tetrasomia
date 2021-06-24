@@ -64,8 +64,8 @@ public class PlayerShoot : NetworkBehaviour
     [ClientRpc]
     void RpcDoHitEffect(Vector3 pos, Vector3 normal)
     {
-        GameObject hitEffect = Instantiate(weaponManager.GetCurrentGFX().HitEffectPrefab, pos, Quaternion.LookRotation(normal));
-        Destroy(hitEffect, 2f);
+        //GameObject hitEffect = Instantiate(weaponManager.GetCurrentGFX().HitEffectPrefab, pos, Quaternion.LookRotation(normal));
+        //Destroy(hitEffect, 2f);
     }
 
     [Command]
@@ -78,8 +78,7 @@ public class PlayerShoot : NetworkBehaviour
     [ClientRpc]
     void RpcDoShootEffect()
     {
-        weaponManager.GetCurrentGFX().muzzleFlash.Play();
-   
+        //weaponManager.GetCurrentGFX().muzzleFlash.Play();
     }
 
     [Client]
@@ -90,14 +89,14 @@ public class PlayerShoot : NetworkBehaviour
             return;
         }
         // Erreur servernetwork not ready
-       // CmdOnShoot();
+        CmdOnShoot();
         RaycastHit hit;
 
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, currentWeapon.range, mask))
         {
             if (hit.collider.tag == "Player")  CmdPlayerShot(hit.collider.name, currentWeapon.damage, transform.name);
             //same que l'autre erreur servernetwork
-            // CmdOnHit(hit.point, hit.normal);
+             CmdOnHit(hit.point, hit.normal);
         }
     }
 

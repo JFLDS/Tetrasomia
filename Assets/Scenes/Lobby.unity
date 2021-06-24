@@ -697,18 +697,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8402424184346720105, guid: c85e8222c11e0264883908a98191c4cf,
-          type: 3}
-        m_MethodName: Renommer
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1847078672}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &734207606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1173,18 +1161,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 102920574}
-        m_MethodName: Renommer
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1847078672}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8402424184346720105, guid: c85e8222c11e0264883908a98191c4cf,
-          type: 3}
         m_MethodName: Renommer
         m_Mode: 2
         m_Arguments:
