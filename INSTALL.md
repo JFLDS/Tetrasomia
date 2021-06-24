@@ -17,6 +17,7 @@ Pour tester à plusieurs :
 - Autoriser Hamachi dans le pare-feu : suivre les images
 
 Etape 1 : Dans le menu demarrer tapez autoriser une application et prenez celui-ci
+
 ![image](https://user-images.githubusercontent.com/84011629/123303098-b60ceb80-d51d-11eb-815e-a3eee6cd832c.png)
 
 Etape 2 : Cliquez sur modifier les paramètres.
