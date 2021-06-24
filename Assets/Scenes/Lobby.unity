@@ -1607,6 +1607,11 @@ PrefabInstance:
       propertyPath: onlineScene
       value: Assets/Scenes/Room.unity
       objectReference: {fileID: 0}
+    - target: {fileID: 3764720675816561400, guid: 805d739a386a1984cad610bf2d52893a,
+        type: 3}
+      propertyPath: playerSpawnMethod
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3764720675816561401, guid: 805d739a386a1984cad610bf2d52893a,
         type: 3}
       propertyPath: m_RootOrder
