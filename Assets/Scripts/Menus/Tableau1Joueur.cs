@@ -12,7 +12,8 @@ public class Tableau1Joueur : MonoBehaviour
 
     public void Setup(Player player)
     {
-        usernameText.text = player.name;
+        if (player.username != "") usernameText.text = player.username;
+        else usernameText.text = player.name;
         killsText.text = "Kills : " + player.kills;
         deathsText.text = "Deaths : " + player.deaths;
     }

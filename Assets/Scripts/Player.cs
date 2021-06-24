@@ -23,6 +23,9 @@ public class Player : NetworkBehaviour
         return (float) currentHealth / maxHealth;
     }
 
+    [SyncVar]
+    public string username = "Player";
+
     public int kills;
     public int deaths;
 
@@ -90,7 +93,7 @@ public class Player : NetworkBehaviour
         if(sourcePlayer != null)
         {
             sourcePlayer.kills++;
-            //GameManager.instance.onPlayerKilledCallBack.Invoke(transform.name, sourcePlayer.name);
+            //GameManager.instance.onPlayerKilledCallBack.Invoke(username, sourcePlayer.username);
         }
 
 
