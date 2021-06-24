@@ -2,17 +2,19 @@
 using UnityEngine.UI;
 using Mirror;
 
+
 public class RecupText : MonoBehaviour
 {
-    NetworkManager manager;
+    NetworkRoomManager manager;
 
     void Awake()
     {
-        manager = GetComponent<NetworkManager>();
+        manager = GetComponent<NetworkRoomManager>();
     }
 
-    public void A(Text networkAddress)
+    public void ChangeAddress(Text networkAddress)
     {
         manager.networkAddress = networkAddress.text;
     }
+
 }

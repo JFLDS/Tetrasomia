@@ -149,7 +149,7 @@ namespace Mirror
 
         void DrawPlayerReadyState()
         {
-            GUILayout.BeginArea(new Rect(20f + (index * 100), 200f, 90f, 130f));
+            GUILayout.BeginArea(new Rect(320f + (index * 100), 200f, 120f, 130f));
 
             GUILayout.Label($"Player [{index + 1}]");
 
@@ -173,7 +173,7 @@ namespace Mirror
         {
             if (NetworkClient.active && isLocalPlayer)
             {
-                GUILayout.BeginArea(new Rect(20f, 300f, 120f, 20f));
+                GUILayout.BeginArea(new Rect(500f, 300f, 100f, 20f));
 
                 if (readyToBegin)
                 {

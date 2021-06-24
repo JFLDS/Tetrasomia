@@ -8,10 +8,7 @@ public class GameManager : MonoBehaviour
 
     private static Dictionary<string, Player> players = new Dictionary<string, Player>();
 
-    public MatchSettings matchSettings;
-
     public static GameManager instance;
-
 
     public delegate void OnPlayerKilledCallBack(string killed, string killer);
     public OnPlayerKilledCallBack onPlayerKilledCallBack;

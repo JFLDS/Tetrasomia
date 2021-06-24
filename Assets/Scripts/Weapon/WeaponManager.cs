@@ -13,7 +13,7 @@ public class WeaponManager : NetworkBehaviour
     [SerializeField]
     private GameObject camGFX;  //L'arme fixer à la camera seulement visible depuis la pov du local player!
 
-    [SerializeField] private Transform WeaponPivot;
+    //[SerializeField] private Transform WeaponPivot;
     [SerializeField] private string weaponLayerName = "Weapon";
 
     void Start()
@@ -28,13 +28,14 @@ public class WeaponManager : NetworkBehaviour
     void EquipWeapon(PlayerWeap _weapon)
     {
         currentWeapon = _weapon;
-        GameObject weaponIns = Instantiate(_weapon.GFX, WeaponPivot.position, WeaponPivot.rotation);
+        //Pour le spawn de l'arme a l'achat
+        /*GameObject weaponIns = Instantiate(_weapon.GFX, WeaponPivot.position, WeaponPivot.rotation);
         weaponIns.transform.SetParent(WeaponPivot);
 
         currentGFX = weaponIns.GetComponent<WeaponGFX>();
 
         if (currentGFX == null) Debug.LogError("Pas de weapon GFX sur l'arme " + weaponIns.name);
-
+        */
 
         if (isLocalPlayer)
         {

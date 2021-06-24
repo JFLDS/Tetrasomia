@@ -180,6 +180,7 @@ namespace Mirror
             GameObject gamePlayer = OnRoomServerCreateGamePlayer(conn, roomPlayer);
             if (gamePlayer == null)
             {
+                showRoomGUI = false;
                 // get start position from base class
                 Transform startPos = GetStartPosition();
                 gamePlayer = startPos != null
@@ -686,7 +687,7 @@ namespace Mirror
             }
 
             if (IsSceneActive(RoomScene))
-                GUI.Box(new Rect(10f, 180f, 520f, 150f), "PLAYERS");
+                GUI.Box(new Rect(300f, 180f, 500f, 150f), "PLAYERS");
         }
 
         #endregion
