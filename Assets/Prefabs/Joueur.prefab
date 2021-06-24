@@ -13691,6 +13691,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   maxHealth: 100
+  username: Player
   kills: 0
   deaths: 0
   disableOnDeath:
@@ -13717,7 +13718,6 @@ MonoBehaviour:
     fireRate: 10
     GFX: {fileID: 1497905785615270689, guid: 5a2560a4f82658f419fc964ade216bd2, type: 3}
   camGFX: {fileID: 3247961007092347741}
-  WeaponPivot: {fileID: 0}
   weaponLayerName: Weapon
 --- !u!1 &4657187468110387343
 GameObject:
