@@ -1,9 +1,18 @@
 Sur ce projet « Tetrasomia », nous étions 4 : Alexandre CHAPLAIS, Tilio EBOR, Jordan FONSECA LEITE DA SILVA, Fabien PEIRAZEAU. 	
 
-Nous nous sommes rapidement séparé les tâches : Alexandre s’est exclusivement occupé de la carte, Jordan des animations, Tilio de l’installation de Mirror et Fabien les premières fonctionnalités. 
+Nous nous sommes rapidement séparé les tâches : Alexandre s’est exclusivement occupé de la carte, Jordan des animations, Tilio de l’installation de Mirror et Fabien les premières
+fonctionnalités. 
 
-Une fois Mirror installé Tilio et Fabien se sont chargés des fonctionnalités : le système de tir, de spawn, respawn, de dégâts, etc. La carte étant une partie majeure du développement de notre jeu, Alexandre a donc logiquement passé une grande partie du temps à la modéliser (environ 5 semaines). Une fois les animations du personnages satisfaisantes (2/3 semaines) nous avons tenté d’ajouter de nouvelles fonctionnalités : particules de tir et d’impact, killfeed, rechargement (Fabien), menu pause, lobby, scoreboard (Tilio), fix de l’arme,  accroupissement et saut du personnage (Jordan). 
+Une fois Mirror installé Tilio et Fabien se sont chargés des fonctionnalités : le système de tir, de spawn, respawn, de dégâts, etc. La carte étant une partie majeure du
+développement de notre jeu, Alexandre a donc logiquement passé une grande partie du temps à la modéliser (environ 5 semaines). Une fois les animations du personnages
+satisfaisantes (2/3 semaines) nous avons tenté d’ajouter de nouvelles fonctionnalités : particules de tir et d’impact, killfeed, rechargement (Fabien), menu pause, lobby,
+scoreboard (Tilio), fix de l’arme,  accroupissement et saut du personnage (Jordan). 
 
-Malheureusement certains ajouts ne fonctionnait que sur notre sauvegarde personnel (nous étions obligés de d’abord tester sur une sauvegarde personnelle car GitHub nous mettait des tonnes d’erreurs lors du push car nous modifiions le même fichier, ce qui est inévitable pour certains scripts) tels que le son et les particules de tir et d’impact. Et combien même ils finissaient par fonctionner chaque ajout amenait son lot de bogues qu’il fallait fixer.
+Malheureusement certains ajouts ne fonctionnait que sur notre sauvegarde personnel (nous étions obligés de d’abord tester sur une sauvegarde personnelle car GitHub nous mettait
+des tonnes d’erreurs lors du push car nous modifiions le même fichier, ce qui est inévitable pour certains scripts) tels que le son et les particules de tir et d’impact. Et
+combien même ils finissaient par fonctionner chaque ajout amenait son lot de bogues qu’il fallait fixer.
 
-Enfin, la dernière semaine a été consacrée a effectué les derniers ajouts possibles : le mode de jeu, les conditions de victoire et les différents menus (Tilio), ajout du son, de nouvelles armes (Jordan), refonte totale du système de tir afin d’essayer d’ajouter les particules de tir et d’impact et les animations de rechargement (Fabien) réalisation des différents documents à rendre sur le Git ainsi que la vidéo de présentation (tout le monde) 
+Enfin, la dernière semaine a été consacrée a effectué les derniers ajouts possibles : le mode de jeu, les conditions de victoire et les différents menus (Tilio), ajout du son, de
+nouvelles armes (Jordan), refonte totale du système de tir afin d’essayer d’ajouter les particules de tir et d’impact et les animations de rechargement (Fabien) réalisation des
+différents documents à rendre sur le Git ainsi que la vidéo de présentation (tout le monde)
+
