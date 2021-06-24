@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/84011629/123290816-dcc52500-d511-11eb-9ed9-440eb77d4a26.png)
+![image](https://user-images.githubusercontent.com/84011629/123293628-7261b400-d514-11eb-9076-4dea1950b4bb.png)
 
 Description des classes principales
 
