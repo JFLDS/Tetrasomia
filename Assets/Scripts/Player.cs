@@ -93,7 +93,7 @@ public class Player : NetworkBehaviour
         if(sourcePlayer != null)
         {
             sourcePlayer.kills++;
-            //GameManager.instance.onPlayerKilledCallBack.Invoke(username, sourcePlayer.username);
+            GameManager.instance.onPlayerKilledCallBack.Invoke(username, sourcePlayer.username);
         }
 
 
