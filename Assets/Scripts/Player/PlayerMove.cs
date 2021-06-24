@@ -4,6 +4,7 @@ public class PlayerMove : MonoBehaviour
 {
     //Variables
     public Rigidbody rb;
+    [SerializeField] private CapsuleCollider cap;
 
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private bool isGrounded;
@@ -17,6 +18,7 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        cap = GetComponent<CapsuleCollider>();
     }
 
     void Update()
@@ -45,6 +47,19 @@ public class PlayerMove : MonoBehaviour
         {
             isCrouching = !isCrouching;
         }
+
+        //On reSize la capsule collider du player afin qu'elle soit à la bonne taille lorsque que le joueur s'accroupit.
+        if (isCrouching)
+        {
+            cap.center = new Vector3(0, -0.43f, 0);
+            cap.height = 1.42f;
+        }
+        else
+        {
+            cap.center = new Vector3(0, -0.03f, 0);
+            cap.height = 1.9f;
+        }
+
 
     }
 }
