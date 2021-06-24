@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using Mirror;
 
 [RequireComponent(typeof(Player))]

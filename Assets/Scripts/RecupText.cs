@@ -2,7 +2,6 @@
 using UnityEngine.UI;
 using Mirror;
 
-
 public class RecupText : MonoBehaviour
 {
     public static RecupText instance;

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Mirror
 {
@@ -147,11 +148,18 @@ namespace Mirror
             }
         }
 
+        public static string renommer;
+
+        public void Renommer(Text username)
+        {
+            renommer = username.text;
+        }
+
         void DrawPlayerReadyState()
         {
             GUILayout.BeginArea(new Rect(320f + (index * 100), 200f, 120f, 130f));
 
-            GUILayout.Label($"Player [{index + 1}]");
+            GUILayout.Label(renommer);
 
             if (readyToBegin)
                 GUILayout.Label("Ready");
