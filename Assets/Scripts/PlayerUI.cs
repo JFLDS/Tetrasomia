@@ -11,6 +11,9 @@ public class PlayerUI : MonoBehaviour
     private GameObject menuPause;
 
     [SerializeField]
+    private GameObject menuOption;
+
+    [SerializeField]
     private GameObject tableauDesScores;
 
     public void SetPlayer(Player _player)
@@ -44,6 +47,12 @@ public class PlayerUI : MonoBehaviour
     {
         menuPause.SetActive(!menuPause.activeSelf);
         MenuPause.isOn = menuPause.activeSelf;
+    }
+
+    public void OptionMenu()
+    {
+        menuOption.SetActive(!menuOption.activeSelf);
+        MenuOptions.isOn = menuOption.activeSelf;
     }
 
     void SetHealthAmount(float _amount)

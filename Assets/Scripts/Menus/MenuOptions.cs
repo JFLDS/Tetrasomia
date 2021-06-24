@@ -1,16 +1,6 @@
-﻿using UnityEngine;
+﻿using Mirror;
 
-public class MenuOptions : MonoBehaviour
+public class MenuOptions : NetworkBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public static bool isOn = false;
 }

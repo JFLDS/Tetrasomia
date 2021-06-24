@@ -13852,7 +13852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 4657187468000482059}
-  sensitivity: 10
+  sensitivity: 5
 --- !u!114 &310036477301761578
 MonoBehaviour:
   m_ObjectHideFlags: 0

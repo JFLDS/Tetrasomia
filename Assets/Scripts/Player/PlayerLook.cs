@@ -12,13 +12,16 @@ public class PlayerLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;   
+        Cursor.lockState = CursorLockMode.Locked;
+
+        //Initiate the Slider value to half way
+        m_MySliderValue = 5f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (MenuPause.isOn) {
+        if (MenuPause.isOn || MenuOptions.isOn) {
             if (Cursor.lockState != CursorLockMode.None)
             {
                 Cursor.lockState = CursorLockMode.None;
@@ -48,4 +51,22 @@ public class PlayerLook : MonoBehaviour
             if (Cursor.lockState == CursorLockMode.Locked) Cursor.lockState = CursorLockMode.None;
         }
     }
+
+    //Value from the slider, and it converts to volume level
+    float m_MySliderValue;
+
+    void OnGUI()
+    {
+        if (MenuOptions.isOn)
+        {
+            //Create a horizontal Slider that controls volume levels. Its highest value is 1 and lowest is 0
+            m_MySliderValue = GUI.HorizontalSlider(new Rect(25, 25, 200, 60), m_MySliderValue, 0.0F, 10.0F);
+            //Makes the volume of the Audio match the Slider value
+            sensitivity = m_MySliderValue;
+        }
+    }
 }
+
+
+
+    
