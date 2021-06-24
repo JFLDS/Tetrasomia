@@ -7,12 +7,12 @@ On va avoir la classe "TableauDesScores" pour récupérer tout ce qui est inform
 
 Le "Lobby" qui sert à rejoindre une partie en local, seul ou en mode en ligne en lien avec notre network API qu'est Mirror.
 
-Dans la partie graphisme :
+Dans la partie graphisme : 
 La classe "Personnage" est la modélisation du personnage avec l'arme ainsi que les mouvements codés pour correspondre au déplacements.
 
 La classe "Map" qui regroupe toute la partie graphique de la carte créée avec son terrain et son décor.
 
-Dans la partie Gameplay :
+Dans la partie Gameplay : 
 La classe "Joueur" regroupe les informations concernant un joueur qui se connecte dans la partie. Ainsi que deux fonction qui lui permette de tirer, recharger et les déplacements possible comme avancer, reculer, sauter ou encore s'accroupir.
 
 Les "Elements" sont des bonus choisi au début de la partie avec un choix entre 4 éléments qui correspondents chacun à un bonus sur le joueur, utilisable durant la partie.
