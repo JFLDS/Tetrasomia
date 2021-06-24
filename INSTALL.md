@@ -10,11 +10,12 @@ Pour tester :
 Pour tester à plusieurs :
 
 - Installer Hamachi.
-- créer un compte et créer un réseaux ou rejoindre un réseaux avec ses amis jusqu'a 4.
+- Créer un compte et créer un réseaux ou rejoindre un réseaux avec ses amis jusqu'a 4.
 - Ne pas oublier de build.
 - Dans le lobby, ajouter votre adresse IPV4 en tant que Host ou sinon ajouté l'adresse de l'Hote et cliquer sur "join".
 
 - Autoriser Hamachi dans le pare-feu : suivre les images
+
 Etape 1 : Dans le menu demarrer tapez autoriser une application et prenez celui-ci
 ![image](https://user-images.githubusercontent.com/84011629/123303098-b60ceb80-d51d-11eb-815e-a3eee6cd832c.png)
 
