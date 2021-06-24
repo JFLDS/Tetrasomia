@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
@@ -25,7 +23,6 @@ public class PlayerLook : MonoBehaviour
             {
                 Cursor.lockState = CursorLockMode.None;
             }
-
             return; 
         }
 
@@ -48,8 +45,7 @@ public class PlayerLook : MonoBehaviour
         //Cursor Locking
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Cursor.lockState == CursorLockMode.Locked)
-                Cursor.lockState = CursorLockMode.None;
+            if (Cursor.lockState == CursorLockMode.Locked) Cursor.lockState = CursorLockMode.None;
         }
     }
 }

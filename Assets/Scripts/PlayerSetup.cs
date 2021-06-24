@@ -54,7 +54,6 @@ public class PlayerSetup : NetworkBehaviour
         Player player = GameManager.GetPlayer(playerID);
         if (player != null)
         {
-            Debug.Log(username);
             player.username = username;
         }
     }

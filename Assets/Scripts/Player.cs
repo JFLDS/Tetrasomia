@@ -4,6 +4,7 @@ using System.Collections;
 
 public class Player : NetworkBehaviour
 {
+
     [SyncVar]
     private bool _isDead = false;
     public bool isDead
@@ -118,4 +119,5 @@ public class Player : NetworkBehaviour
 
         StartCoroutine(Respawn());
     }
+
 }

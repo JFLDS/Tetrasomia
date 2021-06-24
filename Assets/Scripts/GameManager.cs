@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine;      
 using System.Linq;
+using Mirror;
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
     private const string playerIdPrefix = "Player";
 
@@ -12,15 +13,40 @@ public class GameManager : MonoBehaviour
 
     public delegate void OnPlayerKilledCallBack(string killed, string killer);
     public OnPlayerKilledCallBack onPlayerKilledCallBack;
+
+    private NetworkManager networkManager;
+
+    [SerializeField]
+    private GameObject menuPause;
+
     public void Awake()
     {
+        networkManager = NetworkManager.singleton;
         if (instance == null)
         {
             instance = this;
             return;
         }
-
         Debug.LogError("plus d'une instance de GameManager dans la scène");
+    }
+
+    public void Update()
+    {
+        foreach (Player player in GetAllPlayers())
+        {
+            if (player.kills == 30)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                if (isClientOnly)
+                {
+                    networkManager.StopClient();
+                }
+                else
+                {
+                    networkManager.StopHost();
+                }
+            }
+        }
     }
 
     public static void RegisterPlayer(string netID, Player player)
@@ -43,5 +69,11 @@ public class GameManager : MonoBehaviour
     public static Player[] GetAllPlayers()
     {
         return players.Values.ToArray();
+    }
+
+    public void TogglePauseMenu()
+    {
+        menuPause.SetActive(!menuPause.activeSelf);
+        MenuPause.isOn = menuPause.activeSelf;
     }
 }
