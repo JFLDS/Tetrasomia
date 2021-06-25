@@ -112,8 +112,6 @@ public class Player : NetworkBehaviour
             rb.useGravity = false;
         }
 
-        Debug.Log(transform.name + "à passé l'arme à gauche");
-
         StartCoroutine(Respawn());
     }
 }

@@ -8,6 +8,6 @@ public class KillfeedItem : MonoBehaviour
 
     public void Setup(string killed, string killer)
     {
-        text.text = killer + "killed" + killed;
+        text.text = killer + " killed " + killed;
     }
 }
