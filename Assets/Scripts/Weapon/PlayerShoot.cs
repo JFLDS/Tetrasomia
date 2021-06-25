@@ -13,7 +13,10 @@ public class PlayerShoot : NetworkBehaviour
     public PlayerWeap currentWeapon;
     private WeaponManager weaponManager;
 
-    [SerializeField]
+    public ParticleSystem muzzleFlash;
+    public GameObject HitEffectPrefab;
+
+    [SerializeField] 
     private GameObject camGFX;  //L'arme fixer à la camera seulement visible depuis la pov du local player!
 
     // Start is called before the first frame update
@@ -27,7 +30,6 @@ public class PlayerShoot : NetworkBehaviour
         weaponManager = GetComponent<WeaponManager>();
 
         //On met les layer de l'arme, et de ces enfants, attaché à la camera à "Weapon"
-        //camGFX.layer = LayerMask.NameToLayer(weaponLayerName);
         Util.SetLayerRecursively(camGFX, LayerMask.NameToLayer("Weapon"));
     }
 
@@ -64,8 +66,8 @@ public class PlayerShoot : NetworkBehaviour
     [ClientRpc]
     void RpcDoHitEffect(Vector3 pos, Vector3 normal)
     {
-        //GameObject hitEffect = Instantiate(weaponManager.GetCurrentGFX().HitEffectPrefab, pos, Quaternion.LookRotation(normal));
-        //Destroy(hitEffect, 2f);
+        GameObject hitEffect = Instantiate(HitEffectPrefab, pos, Quaternion.LookRotation(normal));
+        Destroy(hitEffect, 2f);
     }
 
     [Command]
@@ -78,7 +80,7 @@ public class PlayerShoot : NetworkBehaviour
     [ClientRpc]
     void RpcDoShootEffect()
     {
-        //weaponManager.GetCurrentGFX().muzzleFlash.Play();
+        muzzleFlash.Play();
     }
 
     [Client]

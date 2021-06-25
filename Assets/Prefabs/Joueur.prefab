@@ -13676,6 +13676,9 @@ MonoBehaviour:
     range: 100
     fireRate: 0
     GFX: {fileID: 1497905785615270689, guid: 5a2560a4f82658f419fc964ade216bd2, type: 3}
+  muzzleFlash: {fileID: 2764366363032707961}
+  HitEffectPrefab: {fileID: 2439511842150134969, guid: 9a438ceec533c394d88b2028adf687fc,
+    type: 3}
   camGFX: {fileID: 3247961007092347741}
 --- !u!114 &3763620221156427356
 MonoBehaviour:
