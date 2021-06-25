@@ -13675,6 +13675,8 @@ MonoBehaviour:
     damage: 10
     range: 100
     fireRate: 0
+    magSize: 30
+    reloadTime: 1.7
     GFX: {fileID: 1497905785615270689, guid: 5a2560a4f82658f419fc964ade216bd2, type: 3}
   muzzleFlash: {fileID: 2764366363032707961}
   HitEffectPrefab: {fileID: 2439511842150134969, guid: 9a438ceec533c394d88b2028adf687fc,
@@ -13720,9 +13722,13 @@ MonoBehaviour:
     damage: 5
     range: 100
     fireRate: 10
+    magSize: 30
+    reloadTime: 1.7
     GFX: {fileID: 1497905785615270689, guid: 5a2560a4f82658f419fc964ade216bd2, type: 3}
   camGFX: {fileID: 3247961007092347741}
   weaponLayerName: Weapon
+  currentMagazineSize: 0
+  isReloading: 0
 --- !u!1 &4657187468110387343
 GameObject:
   m_ObjectHideFlags: 0
@@ -13855,7 +13861,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 4657187468000482059}
-  sensitivity: 5
 --- !u!114 &310036477301761578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13879,7 +13884,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4685125008219810480}
-  - component: {fileID: 1502667997079760269}
   - component: {fileID: 4748775477813793971}
   m_Layer: 31
   m_Name: AR-06
@@ -13905,21 +13909,6 @@ Transform:
   m_Father: {fileID: 3247961007092347742}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1502667997079760269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4685125008219810487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59718b672b129f64ea0db9c8c5d376e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  muzzleFlash: {fileID: 2764366363032707961}
-  HitEffectPrefab: {fileID: 2439511842150134969, guid: 9a438ceec533c394d88b2028adf687fc,
-    type: 3}
 --- !u!114 &4748775477813793971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16876,15 +16865,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 808625604908471907}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1884854471484781979 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1229633966398694392, guid: 5a2560a4f82658f419fc964ade216bd2,
-    type: 3}
-  m_PrefabInstance: {fileID: 808625604908471907}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1884854472293288560 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1229633966659853331, guid: 5a2560a4f82658f419fc964ade216bd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 808625604908471907}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1884854471484781979 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1229633966398694392, guid: 5a2560a4f82658f419fc964ade216bd2,
     type: 3}
   m_PrefabInstance: {fileID: 808625604908471907}
   m_PrefabAsset: {fileID: 0}
