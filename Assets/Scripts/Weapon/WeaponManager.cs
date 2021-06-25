@@ -9,7 +9,6 @@ public class WeaponManager : NetworkBehaviour
 
     private PlayerWeap currentWeapon;
 
-
     [SerializeField]
     private GameObject camGFX;  //L'arme fixer à la camera seulement visible depuis la pov du local player!
 
@@ -27,7 +26,6 @@ public class WeaponManager : NetworkBehaviour
     }
 
     public PlayerWeap GetCurrentWeapon() { return currentWeapon; }
-
     
     void EquipWeapon(PlayerWeap _weapon)
     {

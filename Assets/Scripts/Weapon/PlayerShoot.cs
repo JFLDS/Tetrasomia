@@ -92,7 +92,7 @@ public class PlayerShoot : NetworkBehaviour
     [Client]
     private void Shoot()
     {
-        if (!isLocalPlayer || weaponManager.isReloading) return;
+        if (!isLocalPlayer || weaponManager.isReloading || MenuPause.isOn) return;
        
         if (weaponManager.currentMagazineSize <= 0)
         {
