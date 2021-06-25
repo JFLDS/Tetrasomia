@@ -55,8 +55,6 @@ public class WeaponManager : NetworkBehaviour
     public IEnumerator Reload()
     {
         if (isReloading) yield break;
-
-        Debug.Log("Reloading");
         
         isReloading = true;
 
@@ -65,8 +63,6 @@ public class WeaponManager : NetworkBehaviour
         currentMagazineSize = currentWeapon.magSize;
 
         isReloading = false;
-
-        Debug.Log("Reloading finished");
     }
 
     [Command]

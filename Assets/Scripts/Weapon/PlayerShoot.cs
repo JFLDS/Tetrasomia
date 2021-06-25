@@ -102,8 +102,6 @@ public class PlayerShoot : NetworkBehaviour
 
         weaponManager.currentMagazineSize--;
 
-        if (weaponManager.currentMagazineSize == 0) Debug.Log("No more bullet left.");
-        else Debug.Log(weaponManager.currentMagazineSize + " bullets left.");
 
         CmdOnShoot();
 
@@ -120,7 +118,6 @@ public class PlayerShoot : NetworkBehaviour
     [Command]
     private void CmdPlayerShot(string Pname, float damage, string sourceID)
     {
-        Debug.Log(Pname + " a été touché.");
 
         Player player = GameManager.GetPlayer(Pname);
         player.RpcTakeDamage(damage, sourceID);

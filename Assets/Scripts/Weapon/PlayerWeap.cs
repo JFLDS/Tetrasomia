@@ -3,7 +3,7 @@
 [System.Serializable]
 public class PlayerWeap
 {
-    public string nameW = "AK47";
+    public string nameW = "AR-06";
     public float damage = 10f;
     public float range = 100f;
 
@@ -11,6 +11,6 @@ public class PlayerWeap
 
     public int magSize = 30;
 
-    public float reloadTime = 1.7f;
+    public float reloadTime = 2f;
     public GameObject GFX;
 }
