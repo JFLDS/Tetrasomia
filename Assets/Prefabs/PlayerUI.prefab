@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 7880921050148582776}
   - component: {fileID: 2389617849904919216}
   m_Layer: 5
-  m_Name: HealthBar
+  m_Name: BarreDeVie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -219,12 +219,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1044236144689478777}
-  m_RootOrder: 6
+  m_Father: {fileID: 1042801685139706081}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -514.96, y: -269.85}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 56.082275, y: 57.498978}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8502013114873562124
@@ -459,7 +459,7 @@ RectTransform:
   - {fileID: 1669214307}
   - {fileID: 4045661442560694682}
   - {fileID: 3058802116839386901}
-  - {fileID: 4931438170367587493}
+  - {fileID: 1042801685139706081}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -619,6 +619,81 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1678918469916602794
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1042801685139706081}
+  - component: {fileID: 9181600493907333798}
+  - component: {fileID: 928190946258434202}
+  m_Layer: 5
+  m_Name: Ammo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1042801685139706081
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678918469916602794}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4931438170367587493}
+  m_Father: {fileID: 1044236144689478777}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 134, y: 31.899994}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &9181600493907333798
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678918469916602794}
+  m_CullTransparentMesh: 0
+--- !u!114 &928190946258434202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678918469916602794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &2887096098483907785
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,7 +705,7 @@ GameObject:
   - component: {fileID: 7253144815366924468}
   - component: {fileID: 4678263602548146629}
   m_Layer: 5
-  m_Name: ListOfPlayers
+  m_Name: ListeDesJoueurs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1250,7 +1325,7 @@ GameObject:
   - component: {fileID: 8195722293893706052}
   - component: {fileID: 7928925807236873722}
   m_Layer: 5
-  m_Name: Scoreboard
+  m_Name: TableauDesScores
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1326,9 +1401,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9616d75dde8748543ad58be3f0511e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScoreboard: {fileID: 3146039874797351916, guid: a9f3f4c2a6449fd479732fb73d68239b,
+  tableau1Joueur: {fileID: 3146039874797351916, guid: a9f3f4c2a6449fd479732fb73d68239b,
     type: 3}
-  ListPlayer: {fileID: 7253144815366924468}
+  ListeJoueur: {fileID: 7253144815366924468}
 --- !u!1 &6103947940337649373
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,7 +1418,7 @@ GameObject:
   - component: {fileID: 2488203104629462884}
   - component: {fileID: 7256919443853710018}
   m_Layer: 5
-  m_Name: SettingsMenu
+  m_Name: MenuOptions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1530,7 +1605,7 @@ GameObject:
   - component: {fileID: 8346539522835507223}
   - component: {fileID: 3341724016406719232}
   m_Layer: 5
-  m_Name: PauseMenu
+  m_Name: MenuPause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1779,7 +1854,7 @@ GameObject:
   - component: {fileID: 3101139743244981421}
   - component: {fileID: 1482465556791132575}
   m_Layer: 5
-  m_Name: Title
+  m_Name: Titre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -60,11 +60,28 @@ public class WeaponManager : NetworkBehaviour
         
         isReloading = true;
 
+        CmdOnReload();
         yield return new WaitForSeconds(currentWeapon.reloadTime);
         currentMagazineSize = currentWeapon.magSize;
 
         isReloading = false;
 
         Debug.Log("Reloading finished");
+    }
+
+    [Command]
+    void CmdOnReload()
+    {
+        RpcOnReload();
+    }
+
+    [ClientRpc]
+    void RpcOnReload()
+    {
+        Animator animator = GetComponentInChildren<Animator>();//GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.SetTrigger("Reload");
+        }
     }
 }
