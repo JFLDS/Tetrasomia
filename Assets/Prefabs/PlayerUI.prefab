@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 7880921050148582776}
   - component: {fileID: 2389617849904919216}
   m_Layer: 5
-  m_Name: BarreDeVie
+  m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 766429382636870023}
   - component: {fileID: 8889549000596598099}
   m_Layer: 5
-  m_Name: JaugeDeVie
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 7253144815366924468}
   - component: {fileID: 4678263602548146629}
   m_Layer: 5
-  m_Name: ListeDesJoueurs
+  m_Name: ListOfPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -846,7 +846,7 @@ GameObject:
   - component: {fileID: 269386259657038252}
   - component: {fileID: 8780828910941338553}
   m_Layer: 5
-  m_Name: ButtonQuitter
+  m_Name: Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -976,7 +976,7 @@ GameObject:
   - component: {fileID: 5264522599837754043}
   - component: {fileID: 8207095577271386355}
   m_Layer: 5
-  m_Name: ButtonContinuer
+  m_Name: Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1106,7 +1106,7 @@ GameObject:
   - component: {fileID: 6887024274789961713}
   - component: {fileID: 2455035622972605733}
   m_Layer: 5
-  m_Name: ButtonQuitter
+  m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1325,7 +1325,7 @@ GameObject:
   - component: {fileID: 8195722293893706052}
   - component: {fileID: 7928925807236873722}
   m_Layer: 5
-  m_Name: TableauDesScores
+  m_Name: Scoreboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1401,9 +1401,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9616d75dde8748543ad58be3f0511e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tableau1Joueur: {fileID: 3146039874797351916, guid: a9f3f4c2a6449fd479732fb73d68239b,
+  playerScoreboard: {fileID: 3146039874797351916, guid: a9f3f4c2a6449fd479732fb73d68239b,
     type: 3}
-  ListeJoueur: {fileID: 7253144815366924468}
+  ListPlayer: {fileID: 7253144815366924468}
 --- !u!1 &6103947940337649373
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,7 +1418,7 @@ GameObject:
   - component: {fileID: 2488203104629462884}
   - component: {fileID: 7256919443853710018}
   m_Layer: 5
-  m_Name: MenuOptions
+  m_Name: SettingsMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1605,7 +1605,7 @@ GameObject:
   - component: {fileID: 8346539522835507223}
   - component: {fileID: 3341724016406719232}
   m_Layer: 5
-  m_Name: MenuPause
+  m_Name: PauseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1714,7 +1714,7 @@ GameObject:
   - component: {fileID: 340570039667720256}
   - component: {fileID: 5251339206720116736}
   m_Layer: 5
-  m_Name: ButtonOptions
+  m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1854,7 +1854,7 @@ GameObject:
   - component: {fileID: 3101139743244981421}
   - component: {fileID: 1482465556791132575}
   m_Layer: 5
-  m_Name: Titre
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

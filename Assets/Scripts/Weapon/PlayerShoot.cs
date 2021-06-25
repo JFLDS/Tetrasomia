@@ -39,7 +39,7 @@ public class PlayerShoot : NetworkBehaviour
 
         if (PauseMenu.isOn || SettingsMenu.isOn) return;
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && weaponManager.currentMagazineSize < currentWeapon.magSize)
         {
             StartCoroutine(weaponManager.Reload());
             return;
