@@ -16,8 +16,6 @@ public class PlayerShoot : NetworkBehaviour
     public ParticleSystem muzzleFlash;
     public GameObject HitEffectPrefab;
 
-    Player player;
-
     [SerializeField] 
     private GameObject camGFX;  //L'arme fixer à la camera seulement visible depuis la pov du local player!
 
@@ -39,7 +37,7 @@ public class PlayerShoot : NetworkBehaviour
     {
         currentWeapon = weaponManager.GetCurrentWeapon();
 
-        if (PauseMenu.isOn || SettingsMenu.isOn || player.isDead) return;
+        if (PauseMenu.isOn || SettingsMenu.isOn) return;
 
         if (Input.GetKeyDown(KeyCode.R) && weaponManager.currentMagazineSize < currentWeapon.magSize)
         {

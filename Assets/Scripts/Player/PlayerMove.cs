@@ -12,8 +12,6 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float speed = 4f;
     [SerializeField] private float jump = 5f;
 
-    Player player;
-
     public bool isCrouching;
 
     void Start()
@@ -24,7 +22,7 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        if (PauseMenu.isOn || SettingsMenu.isOn || player.isDead) { return; }
+        if (PauseMenu.isOn || SettingsMenu.isOn) { return; }
 
         //Reading the Input
         float horizontal = Input.GetAxis("Horizontal") * speed;
