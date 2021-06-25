@@ -4,7 +4,6 @@ using System.Collections;
 
 public class Player : NetworkBehaviour
 {
-
     [SyncVar]
     private bool _isDead = false;
     public bool isDead
@@ -97,7 +96,6 @@ public class Player : NetworkBehaviour
             GameManager.instance.onPlayerKilledCallBack.Invoke(username, sourcePlayer.username);
         }
 
-
         deaths++;
 
         //Désactive les components du joueur lors de la mort
@@ -119,5 +117,4 @@ public class Player : NetworkBehaviour
 
         StartCoroutine(Respawn());
     }
-
 }

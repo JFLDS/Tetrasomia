@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TriggerDoorControlled : MonoBehaviour
 {
@@ -50,6 +48,4 @@ public class TriggerDoorControlled : MonoBehaviour
         animator.Play("door_1_close", 0, 0.0f);
         closing = false;
     }
-
-
 }

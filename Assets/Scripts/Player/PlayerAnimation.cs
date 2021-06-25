@@ -2,17 +2,14 @@
 
 public class PlayerAnimation : MonoBehaviour
 {
-
     Animator _animator;
     public PlayerMove playerMove;
     Vector3 move;
     bool isCrouching;
 
-
     void Start()
     {
         _animator = GetComponent<Animator>();
-
     }
 
     void Update()

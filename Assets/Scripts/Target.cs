@@ -1,14 +1,12 @@
-﻿using System;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 namespace UnityStandardAssets.Utility
 {
     public class Target : MonoBehaviour
     {
         public Transform target;
-        public Vector3 offset = new Vector3(0f, 7.5f, 0f);
 
+        public Vector3 offset = new Vector3(0f, 7.5f, 0f);
 
         private void LateUpdate()
         {

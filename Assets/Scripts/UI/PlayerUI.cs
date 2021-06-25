@@ -8,13 +8,13 @@ public class PlayerUI : MonoBehaviour
     private Player player;
 
     [SerializeField]
-    private GameObject menuPause;
+    private GameObject pauseMenu;
 
     [SerializeField]
-    private GameObject menuOption;
+    private GameObject optionMenu;
 
     [SerializeField]
-    private GameObject tableauDesScores;
+    private GameObject scoreboard;
 
     public void SetPlayer(Player _player)
     {
@@ -36,28 +36,27 @@ public class PlayerUI : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            tableauDesScores.SetActive(true);
+            scoreboard.SetActive(true);
         }else if (Input.GetKeyUp(KeyCode.Tab))
         {
-            tableauDesScores.SetActive(false);
+            scoreboard.SetActive(false);
         }
     }
 
     public void TogglePauseMenu()
     {
-        menuPause.SetActive(!menuPause.activeSelf);
-        MenuPause.isOn = menuPause.activeSelf;
+        pauseMenu.SetActive(!pauseMenu.activeSelf);
+        MenuPause.isOn = pauseMenu.activeSelf;
     }
 
     public void OptionMenu()
     {
-        menuOption.SetActive(!menuOption.activeSelf);
-        MenuOptions.isOn = menuOption.activeSelf;
+        optionMenu.SetActive(!optionMenu.activeSelf);
+        MenuOptions.isOn = optionMenu.activeSelf;
     }
 
     void SetHealthAmount(float _amount)
     {
         healthbarFill.localScale = new Vector3(1f, _amount, 1f);
     }
-
 }

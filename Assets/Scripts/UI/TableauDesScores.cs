@@ -10,7 +10,7 @@ public class TableauDesScores : MonoBehaviour
 
     private void OnEnable()
     {
-        //Récupérer une array de tous les joueurs du serveur
+        // Récupérer une array de tous les joueurs du serveur
         Player[] players = GameManager.GetAllPlayers();
 
         // Loop sur l'array et mise en place d'une ligne de UI pour chaque joueur + remplissage de la ligne avec les bonnes données
@@ -27,7 +27,7 @@ public class TableauDesScores : MonoBehaviour
 
     private void OnDisable()
     {
-        // Vider la liste des joueurs
+        // Empty the list of players
         foreach(Transform child in ListeJoueur)
         {
             Destroy(child.gameObject);

@@ -41,7 +41,6 @@ public class PlayerSetup : NetworkBehaviour
             {
                 ui.SetPlayer(GetComponent<Player>());
             }
-
         }
         GetComponent<Player>().Setup();
 
@@ -77,6 +76,7 @@ public class PlayerSetup : NetworkBehaviour
     private void DisableComponents() {
         for (int i = 0; i < componentToDisable.Length; i++) componentToDisable[i].enabled = false;
     }
+
     private void OnDisable()
     {
         Destroy(playerUIInstance);

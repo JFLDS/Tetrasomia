@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;      
 using System.Linq;
+using UnityEngine;      
 using Mirror;
 
 public class GameManager : NetworkBehaviour
@@ -17,7 +17,7 @@ public class GameManager : NetworkBehaviour
     private NetworkManager networkManager;
 
     [SerializeField]
-    private GameObject menuPause;
+    private GameObject pauseMenu;
 
     public void Awake()
     {
@@ -27,9 +27,10 @@ public class GameManager : NetworkBehaviour
             instance = this;
             return;
         }
-        Debug.LogError("plus d'une instance de GameManager dans la scène");
+        Debug.LogError("more than one instance of GameManager in the scene");
     }
 
+    // An Update to finish the game if a player has 30 kills
     public void Update()
     {
         foreach (Player player in GetAllPlayers())
@@ -73,7 +74,7 @@ public class GameManager : NetworkBehaviour
 
     public void TogglePauseMenu()
     {
-        menuPause.SetActive(!menuPause.activeSelf);
-        MenuPause.isOn = menuPause.activeSelf;
+        pauseMenu.SetActive(!pauseMenu.activeSelf);
+        MenuPause.isOn = pauseMenu.activeSelf;
     }
 }

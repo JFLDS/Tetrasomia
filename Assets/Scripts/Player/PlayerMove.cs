@@ -58,7 +58,5 @@ public class PlayerMove : MonoBehaviour
             cap.center = new Vector3(0, -0.03f, 0);
             cap.height = 1.9f;
         }
-
-
     }
 }
