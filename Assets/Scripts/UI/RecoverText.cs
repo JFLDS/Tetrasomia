@@ -2,9 +2,9 @@
 using UnityEngine.UI;
 using Mirror;
 
-public class RecupText : MonoBehaviour
+public class RecoverText : MonoBehaviour
 {
-    public static RecupText instance;
+    public static RecoverText instance;
 
     public static string renommer;
 

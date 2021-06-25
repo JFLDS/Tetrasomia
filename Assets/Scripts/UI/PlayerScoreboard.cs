@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Tableau1Joueur : MonoBehaviour
+public class PlayerScoreboard : MonoBehaviour
 {
     [SerializeField]
     Text usernameText;

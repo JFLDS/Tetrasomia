@@ -1,6 +1,6 @@
 ﻿using Mirror;
 
-public class MenuPause : NetworkBehaviour
+public class PauseMenu : NetworkBehaviour
 {
     public static bool isOn = false;
 

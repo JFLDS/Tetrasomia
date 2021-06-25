@@ -75,6 +75,6 @@ public class GameManager : NetworkBehaviour
     public void TogglePauseMenu()
     {
         pauseMenu.SetActive(!pauseMenu.activeSelf);
-        MenuPause.isOn = pauseMenu.activeSelf;
+        PauseMenu.isOn = pauseMenu.activeSelf;
     }
 }

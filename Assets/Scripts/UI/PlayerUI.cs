@@ -29,7 +29,7 @@ public class PlayerUI : MonoBehaviour
 
     private void Start()
     {
-        MenuPause.isOn = false;
+        PauseMenu.isOn = false;
 
         weaponManager = player.GetComponent<WeaponManager>();
     }
@@ -44,7 +44,7 @@ public class PlayerUI : MonoBehaviour
             TogglePauseMenu();
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab) && !MenuPause.isOn && !MenuOptions.isOn)
+        if (Input.GetKeyDown(KeyCode.Tab) && !PauseMenu.isOn && !SettingsMenu.isOn)
         {
             scoreboard.SetActive(true);
         }
@@ -57,13 +57,13 @@ public class PlayerUI : MonoBehaviour
     public void TogglePauseMenu()
     {
         pauseMenu.SetActive(!pauseMenu.activeSelf);
-        MenuPause.isOn = pauseMenu.activeSelf;
+        PauseMenu.isOn = pauseMenu.activeSelf;
     }
 
     public void OptionMenu()
     {
         optionMenu.SetActive(!optionMenu.activeSelf);
-        MenuOptions.isOn = optionMenu.activeSelf;
+        SettingsMenu.isOn = optionMenu.activeSelf;
     }
 
     void SetHealthAmount(float _amount)

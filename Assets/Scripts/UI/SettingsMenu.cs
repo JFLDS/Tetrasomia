@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Mirror;
 
-public class MenuOptions : NetworkBehaviour
+public class SettingsMenu : NetworkBehaviour
 {
     public static bool isOn = false;
 
@@ -17,7 +17,7 @@ public class MenuOptions : NetworkBehaviour
     // UI for the slider
     void OnGUI()
     {
-        if (MenuOptions.isOn)
+        if (SettingsMenu.isOn)
         {
             //Create a horizontal Slider that controls sensivity. Its highest value is 10 and lowest is 0
             m_MySliderValue = GUI.HorizontalSlider(new Rect(25, 25, 200, 60), m_MySliderValue, 0.0F, 10.0F);

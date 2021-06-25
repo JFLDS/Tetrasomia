@@ -19,7 +19,7 @@ public class PlayerLook : MonoBehaviour
     void Update()
     {
         // Cursor Delock for Menus
-        if (MenuPause.isOn || MenuOptions.isOn) {
+        if (PauseMenu.isOn || SettingsMenu.isOn) {
             if (Cursor.lockState != CursorLockMode.None)
             {
                 Cursor.lockState = CursorLockMode.None;

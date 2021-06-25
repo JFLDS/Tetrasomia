@@ -37,7 +37,7 @@ public class PlayerShoot : NetworkBehaviour
     {
         currentWeapon = weaponManager.GetCurrentWeapon();
 
-        if (MenuPause.isOn || MenuOptions.isOn) return;
+        if (PauseMenu.isOn || SettingsMenu.isOn) return;
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -92,7 +92,7 @@ public class PlayerShoot : NetworkBehaviour
     [Client]
     private void Shoot()
     {
-        if (!isLocalPlayer || weaponManager.isReloading || MenuPause.isOn) return;
+        if (!isLocalPlayer || weaponManager.isReloading || PauseMenu.isOn) return;
        
         if (weaponManager.currentMagazineSize <= 0)
         {

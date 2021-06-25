@@ -44,7 +44,7 @@ public class PlayerSetup : NetworkBehaviour
         }
         GetComponent<Player>().Setup();
 
-        CmdSetUsername(transform.name, RecupText.renommer);
+        CmdSetUsername(transform.name, RecoverText.renommer);
     }
 
     [Command]

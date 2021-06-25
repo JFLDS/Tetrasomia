@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
-public class TableauDesScores : MonoBehaviour
+public class Scoreboard : MonoBehaviour
 {
     [SerializeField]
-    GameObject tableau1Joueur;
+    GameObject playerScoreboard;
 
     [SerializeField]
-    Transform ListeJoueur;
+    Transform ListPlayer;
 
     private void OnEnable()
     {
@@ -16,8 +16,8 @@ public class TableauDesScores : MonoBehaviour
         // Loop sur l'array et mise en place d'une ligne de UI pour chaque joueur + remplissage de la ligne avec les bonnes données
         foreach (Player player in players)
         {
-            GameObject itemGO = Instantiate(tableau1Joueur, ListeJoueur);
-            Tableau1Joueur item = itemGO.GetComponent<Tableau1Joueur>();
+            GameObject itemGO = Instantiate(playerScoreboard, ListPlayer);
+            PlayerScoreboard item = itemGO.GetComponent<PlayerScoreboard>();
             if(item != null)
             {
                 item.Setup(player);
@@ -28,7 +28,7 @@ public class TableauDesScores : MonoBehaviour
     private void OnDisable()
     {
         // Empty the list of players
-        foreach(Transform child in ListeJoueur)
+        foreach(Transform child in ListPlayer)
         {
             Destroy(child.gameObject);
         }
