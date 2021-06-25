@@ -35,7 +35,7 @@ public class GameManager : NetworkBehaviour
     {
         foreach (Player player in GetAllPlayers())
         {
-            if (player.kills == 30)
+            if (player.kills == 3)
             {
                 Cursor.lockState = CursorLockMode.None;
                 if (isClientOnly)

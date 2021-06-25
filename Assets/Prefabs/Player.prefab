@@ -13719,7 +13719,7 @@ MonoBehaviour:
   syncInterval: 0.1
   primaryWeapon:
     nameW: AK47
-    damage: 5
+    damage: 25
     range: 100
     fireRate: 10
     magSize: 30
