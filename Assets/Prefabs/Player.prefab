@@ -13682,7 +13682,6 @@ MonoBehaviour:
   HitEffectPrefab: {fileID: 2439511842150134969, guid: 9a438ceec533c394d88b2028adf687fc,
     type: 3}
   camGFX: {fileID: 3247961007092347741}
-  _animator: {fileID: 2095187556}
 --- !u!114 &3763620221156427356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14289,6 +14288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMove: {fileID: 4657187468000482054}
+  player: {fileID: 3763620221156427356}
 --- !u!114 &3247961007234077362
 MonoBehaviour:
   m_ObjectHideFlags: 0
