@@ -34,10 +34,11 @@ public class PlayerUI : MonoBehaviour
             TogglePauseMenu();
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && !MenuPause.isOn && !MenuOptions.isOn)
         {
             scoreboard.SetActive(true);
-        }else if (Input.GetKeyUp(KeyCode.Tab))
+        }
+        else if (Input.GetKeyUp(KeyCode.Tab))
         {
             scoreboard.SetActive(false);
         }

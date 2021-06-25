@@ -35,7 +35,7 @@ public class PlayerSetup : NetworkBehaviour
             PlayerUI ui = playerUIInstance.GetComponent<PlayerUI>();
             if (ui == null)
             {
-                Debug.LogError("Pas de Component Player UI sur playerUIInstance");
+                Debug.LogError("No Component PlayerUI on playerUIInstance");
             }
             else
             {

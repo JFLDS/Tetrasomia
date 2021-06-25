@@ -1,4 +1,4 @@
-﻿   using UnityEngine;
+﻿using UnityEngine;
 using Mirror;
 using System.Collections;
 
@@ -22,7 +22,6 @@ public class WeaponManager : NetworkBehaviour
 
     public bool isReloading = false;
 
-
     void Start()
     {
         EquipWeapon(primaryWeapon);
@@ -44,7 +43,6 @@ public class WeaponManager : NetworkBehaviour
 
         if (currentGFX == null) Debug.LogError("Pas de weapon GFX sur l'arme " + weaponIns.name);
         */
-
         if (isLocalPlayer)
         {
             //weaponIns.layer = LayerMask.NameToLayer(weaponLayerName);
@@ -52,6 +50,7 @@ public class WeaponManager : NetworkBehaviour
 
             //fonctionne pas
             //On met les layer de l'arme, et de ces enfants, attaché à la camera à "Weapon"
+
             camGFX.layer = LayerMask.NameToLayer(weaponLayerName);
             Util.SetLayerRecursively(camGFX, LayerMask.NameToLayer(weaponLayerName));
         }

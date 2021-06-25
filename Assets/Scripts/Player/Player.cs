@@ -77,7 +77,6 @@ public class Player : NetworkBehaviour
     {
         if (isDead) return;
         currentHealth -= amount;
-        Debug.Log(transform.name + "a maintenant : " + currentHealth + "points de vies.");
 
         if(currentHealth <= 0)
         {
