@@ -1,5 +1,6 @@
 ﻿   using UnityEngine;
 using Mirror;
+using System.Collections;
 
 public class WeaponManager : NetworkBehaviour
 {
@@ -16,6 +17,12 @@ public class WeaponManager : NetworkBehaviour
     //[SerializeField] private Transform WeaponPivot;
     [SerializeField] private string weaponLayerName = "Weapon";
 
+    [HideInInspector]
+    public int currentMagazineSize;
+
+    public bool isReloading = false;
+
+
     void Start()
     {
         EquipWeapon(primaryWeapon);
@@ -28,6 +35,7 @@ public class WeaponManager : NetworkBehaviour
     void EquipWeapon(PlayerWeap _weapon)
     {
         currentWeapon = _weapon;
+        currentMagazineSize = _weapon.magSize;
         //Pour le spawn de l'arme a l'achat
         /*GameObject weaponIns = Instantiate(_weapon.GFX, WeaponPivot.position, WeaponPivot.rotation);
         weaponIns.transform.SetParent(WeaponPivot);
@@ -47,5 +55,21 @@ public class WeaponManager : NetworkBehaviour
             camGFX.layer = LayerMask.NameToLayer(weaponLayerName);
             Util.SetLayerRecursively(camGFX, LayerMask.NameToLayer(weaponLayerName));
         }
+    }
+
+    public IEnumerator Reload()
+    {
+        if (isReloading) yield break;
+
+        Debug.Log("Reloading");
+        
+        isReloading = true;
+
+        yield return new WaitForSeconds(currentWeapon.reloadTime);
+        currentMagazineSize = currentWeapon.magSize;
+
+        isReloading = false;
+
+        Debug.Log("Reloading finished");
     }
 }

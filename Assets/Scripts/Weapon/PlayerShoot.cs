@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using Mirror;
-
 [RequireComponent(typeof(WeaponManager))]
 public class PlayerShoot : NetworkBehaviour
 {   
@@ -38,6 +37,11 @@ public class PlayerShoot : NetworkBehaviour
         currentWeapon = weaponManager.GetCurrentWeapon();
         if (MenuPause.isOn) return;
 
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            StartCoroutine(weaponManager.Reload());
+            return;
+        }
         if (currentWeapon.fireRate <= 0f)
         {
             if (Input.GetButtonDown("Fire1"))
@@ -86,10 +90,18 @@ public class PlayerShoot : NetworkBehaviour
     [Client]
     private void Shoot()
     {
-        if (!isLocalPlayer)
+        if (!isLocalPlayer || weaponManager.isReloading) return;
+       
+        if (weaponManager.currentMagazineSize <= 0)
         {
+           StartCoroutine(weaponManager.Reload());
             return;
         }
+
+        weaponManager.currentMagazineSize--;
+
+        if (weaponManager.currentMagazineSize == 0) Debug.Log("No more bullet left.");
+        else Debug.Log(weaponManager.currentMagazineSize + " bullets left.");
         // Erreur servernetwork not ready
         CmdOnShoot();
         RaycastHit hit;

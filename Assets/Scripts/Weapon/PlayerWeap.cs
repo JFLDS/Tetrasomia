@@ -8,5 +8,8 @@ public class PlayerWeap
 
     public float fireRate = 0f;
 
+    public int magSize = 30;
+
+    public float reloadTime = 1.7f;
     public GameObject GFX;
 }
