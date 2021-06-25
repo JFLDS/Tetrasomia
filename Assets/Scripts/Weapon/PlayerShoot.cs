@@ -87,6 +87,9 @@ public class PlayerShoot : NetworkBehaviour
     void RpcDoShootEffect()
     {
         muzzleFlash.Play();
+
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.PlayOneShot(currentWeapon.Shoot);
     }
 
     [Client]

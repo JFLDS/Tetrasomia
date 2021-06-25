@@ -33,6 +33,12 @@ public class Player : NetworkBehaviour
     private Behaviour[] disableOnDeath;
     private bool[] wasEnabledOnStart;
 
+    [SerializeField]
+    private AudioClip hit;
+
+    [SerializeField]
+    private AudioClip die;
+
     public void Setup()
     {
         wasEnabledOnStart = new bool[disableOnDeath.Length];
@@ -78,8 +84,12 @@ public class Player : NetworkBehaviour
         if (isDead) return;
         currentHealth -= amount;
 
-        if(currentHealth <= 0)
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.PlayOneShot(hit);
+
+        if (currentHealth <= 0)
         {
+            //audio.PlayOneShot(die);
             Die(sourceID);
         }
     }

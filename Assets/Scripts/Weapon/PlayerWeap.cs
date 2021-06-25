@@ -13,4 +13,7 @@ public class PlayerWeap
 
     public float reloadTime = 2f;
     public GameObject GFX;
+
+    public AudioClip Shoot;
+    public AudioClip Reload;
 }
